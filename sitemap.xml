@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Update the domain to your real deployed URL -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hasanjahoush.com/</loc>
@@ -7,18 +6,28 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://hasanjahoush.com/#expertise</loc>
+    <loc>https://hasanjahoush.com/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hasanjahoush.com/workflows.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hasanjahoush.com/#blog</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://hasanjahoush.com/proof.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hasanjahoush.com/#projects</loc>
+    <loc>https://hasanjahoush.com/insights.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hasanjahoush.com/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

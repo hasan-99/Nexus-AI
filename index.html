@@ -1,957 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI, Web, SEO & Automation Services | Hasan Jahoush Cyprus</title>
+    <meta name="description" content="AI agents, automation workflows, SEO-ready websites and backend systems for small businesses. Based in Nicosia, Cyprus. Book a consultation with Hasan Jahoush.">
+    <meta name="keywords" content="AI agents Cyprus, web design Cyprus, SEO services Cyprus, business automation, backend systems, API development, Hasan Jahoush, Nicosia">
+    <meta name="author" content="Hasan Jahoush">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#061312">
+    <link rel="canonical" href="https://hasanjahoush.com/">
 
-        <!-- ===== Primary SEO ===== -->
-        <title>Hasan Jahoush — Software &amp; AI Engineer | Nicosia, Cyprus</title>
-        <meta name="description"
-            content="Hasan Jahoush is a Software &amp; AI Engineer in Nicosia, Cyprus, building AI agents, LLM applications, RAG pipelines and scalable, secure .NET / microservice backends." />
-        <meta name="keywords"
-            content="Hasan Jahoush, Software Engineer, AI Engineer, LLM, RAG, AI agents, .NET, C#, microservices, system design, big data, React, Angular, TypeScript, Cyprus, Nicosia" />
-        <meta name="author" content="Hasan Jahoush" />
-        <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#0a0a1f" />
-        <!-- TODO: replace with your real deployed domain -->
-        <link rel="canonical" href="https://hasanjahoush.com/" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI, Web, SEO & Automation Services | Hasan Jahoush">
+    <meta property="og:description" content="Build AI agents, automate repetitive work, launch SEO-ready websites and ship reliable backend systems for small businesses.">
+    <meta property="og:image" content="https://hasanjahoush.com/img/profile.jpg">
+    <meta property="og:url" content="https://hasanjahoush.com/">
+    <meta property="og:site_name" content="Hasan Jahoush Services">
+    <meta property="og:locale" content="en_US">
 
-        <!-- ===== Open Graph (LinkedIn / Facebook / Slack) ===== -->
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Hasan Jahoush — Software &amp; AI Engineer" />
-        <meta property="og:description"
-            content="Building AI agents, LLM applications and scalable, secure backends. Based in Nicosia, Cyprus." />
-        <meta property="og:image" content="https://hasanjahoush.com/img/profile.jpg" />
-        <meta property="og:url" content="https://hasanjahoush.com/" />
-        <meta property="og:site_name" content="Hasan Jahoush" />
-        <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI, Web, SEO & Automation Services | Hasan Jahoush">
+    <meta name="twitter:description" content="AI agents, web design, SEO, automation and backend systems for businesses that need less manual work.">
+    <meta name="twitter:image" content="https://hasanjahoush.com/img/profile.jpg">
 
-        <!-- ===== Twitter / X ===== -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hasan Jahoush — Software &amp; AI Engineer" />
-        <meta name="twitter:description"
-            content="Building AI agents, LLM applications and scalable, secure backends." />
-        <meta name="twitter:image" content="https://hasanjahoush.com/img/profile.jpg" />
-
-        <!-- ===== Structured data: Person ===== -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Hasan Jahoush Services",
+        "url": "https://hasanjahoush.com/",
+        "image": "https://hasanjahoush.com/img/profile.jpg",
+        "description": "AI agents, business automation, web design, SEO and backend engineering services for small businesses.",
+        "email": "mailto:hasan.cy99@gmail.com",
+        "telephone": "+35799260049",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nicosia",
+          "addressCountry": "Cyprus"
+        },
+        "areaServed": ["Cyprus", "Remote"],
+        "founder": {
           "@type": "Person",
           "name": "Hasan Jahoush",
           "jobTitle": "Software & AI Engineer",
-          "description": "Software & AI Engineer building AI agents, LLM applications, RAG pipelines and scalable, secure .NET / microservice backends.",
-          "image": "https://hasanjahoush.com/img/profile.jpg",
-          "email": "mailto:hasan.cy99@gmail.com",
-          "url": "https://hasanjahoush.com/",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Nicosia",
-            "addressCountry": "Cyprus"
-          },
-          "knowsAbout": ["Artificial Intelligence", "LLM Applications", "RAG", "System Design", "Microservices", ".NET", "C#", "Big Data", "React", "Angular"],
           "sameAs": [
-            "https://www.linkedin.com/in/hasan-jahoosh-bb457419a/",
-            "https://github.com/"
+            "https://www.linkedin.com/in/hasan-jahoosh-bb457419a/"
+          ]
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AI, Web, SEO and Automation Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Agents" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Automation" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design and Development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO and Local Visibility" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Backend and API Systems" } }
           ]
         }
-        </script>
+      }
+    </script>
 
-        <link rel="stylesheet" href="css/style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Arabic&display=swap"
-            rel="stylesheet">
-        <link rel="icon" href="img/icon.png">
-    </head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icon.png">
+  </head>
 
-    <body>
+  <body>
+    <a class="skip-link" href="services.html">Skip to services</a>
 
-        <!-- #################################### nav -->
-        <nav class="navbar navbar-expand-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Hasan </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon" style="display:flex;align-items:center"><i
-                            class="fa-solid fa-bars"></i></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">about me</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills ">skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#expertise">what i do</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#why">why me ?!</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">my projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#blog">blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- ################################################# main -->
-
-        <main>
-            <div class="word">
-                <div class="hero-kicker">AI systems / backend architecture / product engineering</div>
-                <div class="son">
-                    <div class="hi">
-                        <div class="run">
-                            <span>hi,</span>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="me">
-                        <div class="run">
-                            <h1>i'm <span>Hasan ..</span></h1>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="myskill">
-                        <div class="run">
-                            <div>Software &amp; <span>AI Engineer</span> · 5+ years</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-signals" aria-label="Key strengths">
-                    <span>LLM apps</span>
-                    <span>RAG</span>
-                    <span>.NET</span>
-                    <span>React</span>
-                </div>
-                <div class="btns">
-                    <a href="#contact">contact</a>
-                    <div class="friends">
-                        <button>let's be friends</button>
-                        <div class="contacts">
-                            <a href="https://www.facebook.com/ghareeb.alj/" target="_blank">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/hasan.jaho/" target="_blank">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://wa.me/0035799260049" target="_blank">
-                                <i class="fab fa-whatsapp-square	"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/hasan-jahoosh-bb457419a/" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                            
-                                
-                            </a>
-                        </div>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="img">
-                <div class="hero-badge">Nicosia / Cyprus</div>
-                <div class="photo-frame"><img src="img/profile.jpg" alt="Hasan Jahoush portrait"></div>
-                <div class="hero-stack">
-                    <span>5+ years</span>
-                    <span>Software &amp; AI Engineer</span>
-                </div>
-                <div class="msg-father">
-                    <div class="son">
-                        <div class="msg msg-1">
-                            <div class="prof">
-                                <img src="img/me2-removebg-preview.png" alt="">
-                            </div>
-                            <div class="mssg">
-                                hi,
-                                <br>
-                                i'm Hasan  <i class="fas fa-laugh" style="color: yellow;"></i>
-                            </div>
-                        </div>
-                        <div class="msg msg-2">
-                            <div class="prof">
-                                <img src="img/me2-removebg-preview.png" alt="">
-                            </div>
-                            <div class="mssg">
-                                i'm
-                                <br>
-                                full stuck web developer .
-                            </div>
-                        </div>
-                        <div class="msg msg-3">
-                            <div class="prof">
-                                <img src="img/me2-removebg-preview.png" alt="">
-                            </div>
-                            <div class="mssg">
-                                contact me ..<br>
-                                i'm here ... <i class="fas fa-laugh" style="color: yellow;"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </main>
-
-        <!-- ################################################### about -->
-
-        <section class=" about">
-
-            <div class="svg" id="about">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg"
-                    class="transition duration-300 ease-in-out delay-150">
-                    <defs>
-                        <linearGradient id="gradient_1" x1="53%" y1="0%" x2="47%" y2="100%">
-                            <stop offset="15%" stop-color="#591EC3"></stop>
-                            <stop offset="85%" stop-color="#9435D7"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M 0,400 C 0,400 0,200 0,200 C 86.36363636363635,221.3492822966507 172.7272727272727,242.69856459330143 271,229 C 369.2727272727273,215.30143540669857 479.4545454545454,166.55502392344496 582,155 C 684.5454545454546,143.44497607655504 779.4545454545455,169.08133971291866 885,199 C 990.5454545454545,228.91866028708134 1106.7272727272727,263.11961722488036 1201,264 C 1295.2727272727273,264.88038277511964 1367.6363636363635,232.44019138755982 1440,200 C 1440,200 1440,400 1440,400 Z"
-                        stroke="none" stroke-width="0" fill="url(#gradient_1)"
-                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                </svg>
-            </div>
-            <div class="svg">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg"
-                    class="transition duration-300 ease-in-out delay-150">
-                    <defs>
-                        <linearGradient id="gradient_2" x1="53%" y1="0%" x2="47%" y2="100%">
-                            <stop offset="25%" stop-color="#9435D7"></stop>
-                            <stop offset="75%" stop-color="#018dbe00"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M 0,400 C 0,400 0,200 0,200 C 116.99521531100478,166.755980861244 233.99043062200957,133.51196172248802 327,156 C 420.00956937799043,178.48803827751198 489.03349282296654,256.7081339712919 585,271 C 680.9665071770335,285.2918660287081 803.8755980861245,235.6555023923445 896,207 C 988.1244019138755,178.3444976076555 1049.4641148325359,170.66985645933013 1135,173 C 1220.5358851674641,175.33014354066987 1330.267942583732,187.66507177033492 1440,200 C 1440,200 1440,400 1440,400 Z"
-                        stroke="none" stroke-width="0" fill="url(#gradient_2)"
-                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                </svg>
-            </div>
-
-            <div class="son">
-                <h2>about me</h2>
-                <div class="child">
-                    <div class="img">
-                        <div class="img-con">
-                            <img src="img/me5.png" alt="">
-                        </div>
-                    </div>
-
-                    <div class="canvas-con">
-                        <div class="son">
-
-                            <div class="abt abt-1">
-                                <div class="prof">
-                                    <img src="img/me2-removebg-preview.png" alt="">
-                                </div>
-                                <div class="mssg">
-                                    i'm Mohamad Hasan Jahouse <i class="fas fa-laugh" style="color: yellow;"></i>
-                                </div>
-                            </div>
-                            <div class="abt abt-2">
-                                <div class="prof">
-                                    <img src="img/me2-removebg-preview.png" alt="">
-                                </div>
-                                <div class="mssg">
-                                    from Syria, Damascuse, Aga 22, live in <span>Cyprus</span> 
-                                </div>
-                            </div>
-
-                            <div class="abt abt-3">
-                                <div class="prof">
-                                    <img src="img/me2-removebg-preview.png" alt="">
-                                </div>
-                                <div class="mssg">
-                                    I am a <span>full stack developer</span>  </div>
-                            </div>
-
-                            <div class="abt abt-4">
-                                <div class="prof">
-                                    <img src="img/me2-removebg-preview.png" alt="">
-                                </div>
-                                <div class="mssg">
-                                    I will be happy to work with you <i class="fas fa-laugh" style="color: yellow;"></i>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ############################################## skills -->
-
-        <section class=" skills">
-
-            <div class="svg" id="skills">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg"
-                    class="transition duration-300 ease-in-out delay-150">
-                    <defs>
-                        <linearGradient id="gradient_3" x1="53%" y1="0%" x2="47%" y2="100%">
-                            <stop offset="45%" stop-color="#B0C4DF"></stop>
-                            <stop offset="20%" stop-color="#EBBBE3"></stop>
-                            <stop offset="45%" stop-color="#018cbe00"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M 0,400 C 0,400 0,200 0,200 C 86.36363636363635,221.3492822966507 172.7272727272727,242.69856459330143 271,229 C 369.2727272727273,215.30143540669857 479.4545454545454,166.55502392344496 582,155 C 684.5454545454546,143.44497607655504 779.4545454545455,169.08133971291866 885,199 C 990.5454545454545,228.91866028708134 1106.7272727272727,263.11961722488036 1201,264 C 1295.2727272727273,264.88038277511964 1367.6363636363635,232.44019138755982 1440,200 C 1440,200 1440,400 1440,400 Z"
-                        stroke="none" stroke-width="0" fill="url(#gradient_3)"
-                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                </svg>
-            </div>
-            <div class="svg">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg"
-                    class="transition duration-300 ease-in-out delay-150">
-                    <defs>
-                        <linearGradient id="gradient_4" x1="53%" y1="0%" x2="47%" y2="100%">
-                            <stop offset="25%" stop-color="#EBBBE3"></stop>
-                            <stop offset="30%" stop-color="#CFBBE2"></stop>
-                            <stop offset="75%" stop-color="#018cbe00"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M 0,400 C 0,400 0,200 0,200 C 116.99521531100478,166.755980861244 233.99043062200957,133.51196172248802 327,156 C 420.00956937799043,178.48803827751198 489.03349282296654,256.7081339712919 585,271 C 680.9665071770335,285.2918660287081 803.8755980861245,235.6555023923445 896,207 C 988.1244019138755,178.3444976076555 1049.4641148325359,170.66985645933013 1135,173 C 1220.5358851674641,175.33014354066987 1330.267942583732,187.66507177033492 1440,200 C 1440,200 1440,400 1440,400 Z"
-                        stroke="none" stroke-width="0" fill="url(#gradient_4)"
-                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                </svg>
-            </div>
-
-
-            <div class="son">
-                <h2>my skills</h2>
-                <div class="child">
-                    <div class="img">
-                        <div class="img-con">
-                            <video src="img/img-bg.mp4" autoplay loop muted></video>
-                            <img src="img/me4.png" alt="">
-                        </div>
-                    </div>
-                    <div class="canvas-con">
-                        <div class="son">
-                            <div class="line_1"></div>
-                            <div class="skill">
-                                <span>
-                                    full stack developer
-                                </span>
-                            </div>
-                            <div class="line_2"></div>
-                            <div class="line_3"></div>
-                            <div class="line_4"></div>
-                            <div class="line_5"></div>
-                            <div class="skill front">
-                                <span>
-                                    front end developer
-                                    <div class="cur">
-                                        <div class="spinner-grow text-dark" style="width: 2vw;height:2vw"></div>
-                                        <i class='fas fa-mouse-pointer pointer'></i>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="skill back">
-                                <span>
-                                    back end developer
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="front-skill" id="frontdiv">
-                <div class="close"><i class="fas fa-window-close"></i></div>
-                <h3>my front end skills</h3>
-                <div class="son">
-                    <div class="img">
-                        <img src="img/front-end-removebg-preview.png" alt="">
-                    </div>
-                    <div class="word">
-                        <div class="sk react">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-brands fa-react"></i>
-                                    react / next.js
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-brands fa-react"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sk angular">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-brands fa-angular"></i>
-                                    angular
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-brands fa-angular"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sk typescript">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-solid fa-code"></i>
-                                    typescript
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-solid fa-code"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sk js">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-brands fa-js"></i>
-                                    java script
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-brands fa-js"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sk bootstrap">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-brands fa-bootstrap"></i>
-                                    bootstrap / tailwind
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-brands fa-bootstrap"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="back-skill" id="backdiv">
-                <div class="close"><i class="fas fa-window-close"></i></div>
-                <h3>my back end skills</h3>
-                <div class="son">
-                    <div class="img">
-                        <img src="img/back-end.png" alt="">
-                    </div>
-                    <div class="word">
-                        <div class="sk csharp">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-solid fa-hashtag"></i>c#
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-solid fa-hashtag"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sk dotnet">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-solid fa-layer-group"></i>.net / microservices
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-solid fa-layer-group"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sk sqlserver">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa fa-database" aria-hidden="true"></i>sql server
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa fa-database" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sk rabbitmq">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-solid fa-diagram-project"></i>rabbitmq
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-solid fa-diagram-project"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sk docker">
-                            <div class="upper">
-                                <div class="name">
-                                    <i class="fa-brands fa-docker"></i>docker
-                                </div>
-                            </div>
-                            <div class="lower">
-                                <div class="bar">
-                                    <div class="run">
-                                        <div class="level"><span>0</span>%</div>
-                                        <i class="fa-brands fa-docker"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ######################################## expertise / what i do -->
-
-        <section class="expertise" id="expertise">
-            <h2>what i do</h2>
-            <p class="exp-sub">end to end engineering — from AI systems and scalable backends to the
-                interfaces people actually touch.</p>
-
-            <div class="exp-grid">
-                <div class="exp-card ai">
-                    <div class="ic"><i class="fa-solid fa-robot"></i></div>
-                    <h3>AI Engineering</h3>
-                    <p>Building AI agents and LLM applications, designing RAG pipelines and automating real
-                        workflows with AI — routed through OpenRouter with reliable prompt engineering.</p>
-                    <div class="tags">
-                        <span>LLM Apps</span><span>RAG</span><span>AI Agents</span><span>OpenRouter</span>
-                    </div>
-                </div>
-
-                <div class="exp-card voice">
-                    <div class="ic"><i class="fa-solid fa-microphone-lines"></i></div>
-                    <h3>AI Voice Agents</h3>
-                    <p>Creating conversational voice agents that answer calls and talk naturally in real time —
-                        built with Retell, ElevenLabs and Telnyx telephony.</p>
-                    <div class="tags">
-                        <span>Retell</span><span>ElevenLabs</span><span>Telnyx</span><span>Real-time Speech</span>
-                    </div>
-                </div>
-
-                <div class="exp-card assist">
-                    <div class="ic"><i class="fa-solid fa-brain"></i></div>
-                    <h3>Personal AI Assistant</h3>
-                    <p>Building custom AI &ldquo;brains&rdquo; — personal visual assistants that see, understand
-                        context and take action on your behalf, across your tools.</p>
-                    <div class="tags">
-                        <span>Vision</span><span>Multimodal</span><span>Agents</span><span>Automation</span>
-                    </div>
-                </div>
-
-                <div class="exp-card gen">
-                    <div class="ic"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h3>Generative AI</h3>
-                    <p>Putting AI to work generating code, content and media — turning slow, repetitive tasks
-                        into fast, automated pipelines.</p>
-                    <div class="tags">
-                        <span>Code Gen</span><span>Content</span><span>Automation</span><span>Prompting</span>
-                    </div>
-                </div>
-
-                <div class="exp-card web">
-                    <div class="ic"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>Building fast, modern websites end to end — frontend, backend and everything between.
-                        Available for freelance projects.</p>
-                    <div class="tags">
-                        <span>Full-Stack</span><span>Responsive</span><span>APIs</span><span>Freelance</span>
-                    </div>
-                </div>
-
-                <div class="exp-card sys">
-                    <div class="ic"><i class="fa-solid fa-sitemap"></i></div>
-                    <h3>System Design</h3>
-                    <p>Architecting scalable microservices with clean, secure-by-default backends. Integrating
-                        complex systems and event-driven flows that stay maintainable as they grow.</p>
-                    <div class="tags">
-                        <span>Microservices</span><span>Clean Architecture</span><span>Secure by Default</span><span>RabbitMQ</span>
-                    </div>
-                </div>
-
-                <div class="exp-card data">
-                    <div class="ic"><i class="fa-solid fa-database"></i></div>
-                    <h3>Big Data</h3>
-                    <p>Engineering high-volume data pipelines and preparation steps that turn raw, messy data
-                        into structured, queryable datasets — with optimized SQL behind them.</p>
-                    <div class="tags">
-                        <span>Data Pipelines</span><span>Data Prep</span><span>SQL Optimization</span><span>Impala</span>
-                    </div>
-                </div>
-
-                <div class="exp-card ux">
-                    <div class="ic"><i class="fa-solid fa-pen-ruler"></i></div>
-                    <h3>UI / UX</h3>
-                    <p>Crafting modern, responsive interfaces in React and Angular — clean design systems,
-                        smooth interactions and accessible, user-focused experiences.</p>
-                    <div class="tags">
-                        <span>Responsive</span><span>React / Angular</span><span>Design Systems</span><span>Accessibility</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ######################################## why me -->
-
-        <section class=" why">
-
-            <div class="svg" id="why">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg"
-                    class="transition duration-300 ease-in-out delay-150">
-                    <defs>
-                        <linearGradient id="gradient_5" x1="53%" y1="0%" x2="47%" y2="100%">
-                            <stop offset="15%" stop-color="#FF9F52"></stop>
-                            <stop offset="85%" stop-color="#9435D7"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M 0,400 C 0,400 0,200 0,200 C 86.36363636363635,221.3492822966507 172.7272727272727,242.69856459330143 271,229 C 369.2727272727273,215.30143540669857 479.4545454545454,166.55502392344496 582,155 C 684.5454545454546,143.44497607655504 779.4545454545455,169.08133971291866 885,199 C 990.5454545454545,228.91866028708134 1106.7272727272727,263.11961722488036 1201,264 C 1295.2727272727273,264.88038277511964 1367.6363636363635,232.44019138755982 1440,200 C 1440,200 1440,400 1440,400 Z"
-                        stroke="none" stroke-width="0" fill="url(#gradient_5)"
-                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                </svg>
-            </div>
-            <div class="svg">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg"
-                    class="transition duration-300 ease-in-out delay-150">
-                    <defs>
-                        <linearGradient id="gradient_6" x1="53%" y1="0%" x2="47%" y2="100%">
-                            <stop offset="25%" stop-color="#4ED5DE"></stop>
-                            <stop offset="75%" stop-color="#018dbe00"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M 0,400 C 0,400 0,200 0,200 C 116.99521531100478,166.755980861244 233.99043062200957,133.51196172248802 327,156 C 420.00956937799043,178.48803827751198 489.03349282296654,256.7081339712919 585,271 C 680.9665071770335,285.2918660287081 803.8755980861245,235.6555023923445 896,207 C 988.1244019138755,178.3444976076555 1049.4641148325359,170.66985645933013 1135,173 C 1220.5358851674641,175.33014354066987 1330.267942583732,187.66507177033492 1440,200 C 1440,200 1440,400 1440,400 Z"
-                        stroke="none" stroke-width="0" fill="url(#gradient_6)"
-                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                </svg>
-            </div>
-
-            <div class="son">
-                <h2>why me ?!</h2>
-                <div class="child">
-                    <div class="img">
-                        <div class="img-con">
-                            <img src="img/WhatsApp Image 2022-05-11 at 3.16.34 PM.jpeg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="canvas-con">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores perferendis sit vitae animi
-                        consequuntur nesciunt illo aliquid quia, repellendus facilis assumenda inventore quos magnam
-                        modi, facere iste sint ea veritatis.
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ################################################### projects -->
-
-        <section class=" projects">
-
-            <div class="svg" id="projects">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg"
-                    class="transition duration-300 ease-in-out delay-150">
-                    <defs>
-                        <linearGradient id="gradient_7" x1="53%" y1="0%" x2="47%" y2="100%">
-                            <stop offset="15%" stop-color="#ffffff"></stop>
-                            <stop offset="85%" stop-color="#ffffff"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M 0,400 C 0,400 0,200 0,200 C 86.36363636363635,221.3492822966507 172.7272727272727,242.69856459330143 271,229 C 369.2727272727273,215.30143540669857 479.4545454545454,166.55502392344496 582,155 C 684.5454545454546,143.44497607655504 779.4545454545455,169.08133971291866 885,199 C 990.5454545454545,228.91866028708134 1106.7272727272727,263.11961722488036 1201,264 C 1295.2727272727273,264.88038277511964 1367.6363636363635,232.44019138755982 1440,200 C 1440,200 1440,400 1440,400 Z"
-                        stroke="none" stroke-width="0" fill="url(#gradient_7)"
-                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                </svg>
-            </div>
-            <div class="svg">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg"
-                    class="transition duration-300 ease-in-out delay-150">
-                    <defs>
-                        <linearGradient id="gradient_8" x1="53%" y1="0%" x2="47%" y2="100%">
-                            <stop offset="25%" stop-color="#ffffff"></stop>
-                            <stop offset="75%" stop-color="#ffffff"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M 0,400 C 0,400 0,200 0,200 C 116.99521531100478,166.755980861244 233.99043062200957,133.51196172248802 327,156 C 420.00956937799043,178.48803827751198 489.03349282296654,256.7081339712919 585,271 C 680.9665071770335,285.2918660287081 803.8755980861245,235.6555023923445 896,207 C 988.1244019138755,178.3444976076555 1049.4641148325359,170.66985645933013 1135,173 C 1220.5358851674641,175.33014354066987 1330.267942583732,187.66507177033492 1440,200 C 1440,200 1440,400 1440,400 Z"
-                        stroke="none" stroke-width="0" fill="url(#gradient_8)"
-                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                </svg>
-            </div>
-
-            <div class="son">
-                <h2>my projects</h2>
-                <div class="child">
-
-
-                    
-                    <div class="project">
-                        <img src="img/p2.png" alt="">
-                        <div class="hover">
-                            <a href="my-wedsites_wxampels/bakery/main_page_en.html">visit</a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <img src="img/p3.png" alt="">
-                        <div class="hover">
-                            <a href="my-wedsites_wxampels/broker/index.html">visit</a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <img src="img/p5.png" alt="">
-                        <div class="hover">
-                            <a href="my-wedsites_wxampels/exampel-hh2/index.html">visit</a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <img src="img/p4.png" alt="">
-                        <div class="hover">
-                            <a href="my-wedsites_wxampels/exapel-1/index.html">visit</a>
-                        </div>
-                    </div>
-                   
-                    
-                    
-                </div>
-            </div>
-        </section>
-
-        <!-- ######################################## blog / insights -->
-
-        <section class="blog" id="blog">
-            <h2>insights &amp; writing</h2>
-            <p class="blog-sub">Notes on AI engineering, system design and shipping software that lasts.</p>
-
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <a class="blog-cover ai" href="#" aria-label="Read article">
-                        <span class="blog-tag">AI Engineering</span>
-                        <i class="fa-solid fa-robot"></i>
-                    </a>
-                    <div class="blog-body">
-                        <h3>Building Production AI Agents That Actually Ship</h3>
-                        <p>What it takes to move an LLM agent from a clever demo to a reliable, tool-using
-                            system wired into a real backend.</p>
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-clock"></i> 7 min read</span>
-                            <a href="#">Read article <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <a class="blog-cover data" href="#" aria-label="Read article">
-                        <span class="blog-tag">RAG</span>
-                        <i class="fa-solid fa-diagram-project"></i>
-                    </a>
-                    <div class="blog-body">
-                        <h3>RAG Pipelines: From Raw Data to Grounded Answers</h3>
-                        <p>Chunking, embeddings and retrieval — the practical decisions that decide whether
-                            your model cites the truth or hallucinates.</p>
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-clock"></i> 9 min read</span>
-                            <a href="#">Read article <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <a class="blog-cover sys" href="#" aria-label="Read article">
-                        <span class="blog-tag">System Design</span>
-                        <i class="fa-solid fa-sitemap"></i>
-                    </a>
-                    <div class="blog-body">
-                        <h3>Designing Secure Microservices in .NET</h3>
-                        <p>Clean boundaries, secure-by-default services and event-driven flows with RabbitMQ
-                            that stay maintainable as the system grows.</p>
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-clock"></i> 8 min read</span>
-                            <a href="#">Read article <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <a class="blog-cover ux" href="#" aria-label="Read article">
-                        <span class="blog-tag">Big Data</span>
-                        <i class="fa-solid fa-database"></i>
-                    </a>
-                    <div class="blog-body">
-                        <h3>Turning Messy Big Data Into Queryable Datasets</h3>
-                        <p>High-volume ingestion, data prep and SQL optimization — the unglamorous work that
-                            makes analytics and AI actually trustworthy.</p>
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-                            <a href="#">Read article <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <a class="blog-cover ai" href="#" aria-label="Read article">
-                        <span class="blog-tag">Architecture</span>
-                        <i class="fa-solid fa-cubes"></i>
-                    </a>
-                    <div class="blog-body">
-                        <h3>Clean Architecture for the AI Era</h3>
-                        <p>Deep modules, stable interfaces and locality — how to keep an AI-generated codebase
-                            navigable instead of drowning in entropy.</p>
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-clock"></i> 10 min read</span>
-                            <a href="#">Read article <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <a class="blog-cover sys" href="#" aria-label="Read article">
-                        <span class="blog-tag">Career</span>
-                        <i class="fa-solid fa-route"></i>
-                    </a>
-                    <div class="blog-body">
-                        <h3>From C# Backend to LLM Apps: A Practical Path</h3>
-                        <p>How a strong .NET foundation translates into building AI products — and the skills
-                            worth picking up first.</p>
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
-                            <a href="#">Read article <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <div class="contact" id="contact">
-            <div class="dark">
-                <a href="#">contact</a>
-            </div>
+    <nav class="navbar navbar-expand-lg service-nav" aria-label="Main navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" aria-label="Hasan Jahoush home">
+          <span class="brand-mark">HJ</span>
+          <span>Hasan Services</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="siteNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="workflows.html">Workflows</a></li>
+            <li class="nav-item"><a class="nav-link" href="proof.html">Proof</a></li>
+            <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+            <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Book Consultation</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
-        <footer class="site-footer">
-            <div class="footer-glow"></div>
-            <div class="footer-inner">
-                <div class="f-col f-brand">
-                    <a class="f-logo" href="#">Hasan<span>.</span></a>
-                    <p>Software &amp; AI Engineer building AI agents, voice assistants and scalable web
-                        platforms. Based in Nicosia, Cyprus — available for freelance work.</p>
-                    <div class="f-social">
-                        <a href="https://www.linkedin.com/in/hasan-jahoosh-bb457419a/" target="_blank"
-                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/" target="_blank" aria-label="GitHub"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/hasan.jaho/" target="_blank" aria-label="Instagram"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/0035799260049" target="_blank" aria-label="WhatsApp"><i
-                                class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
+    <main id="top" class="hero">
+      <div class="hero-grid">
+        <section class="hero-copy" aria-labelledby="hero-title">
+          <p class="eyebrow">AI agents / web systems / local SEO / backend automation</p>
+          <h1 id="hero-title">AI, automation, and web systems for businesses that need less manual work.</h1>
+          <p class="hero-subcopy">I help Cyprus-based and remote businesses answer leads faster, automate repetitive workflows, modernize their web presence, and ship reliable backend systems without enterprise overhead.</p>
 
-                <div class="f-col">
-                    <h4>Explore</h4>
-                    <a href="#about">About me</a>
-                    <a href="#expertise">What I do</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#blog">Blog</a>
-                </div>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="btn-primary-service" href="contact.html">Book a Consultation <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn-secondary-service" href="services.html">See Services</a>
+          </div>
 
-                <div class="f-col">
-                    <h4>Services</h4>
-                    <a href="#expertise">AI Engineering</a>
-                    <a href="#expertise">AI Voice Agents</a>
-                    <a href="#expertise">Web Development</a>
-                    <a href="#expertise">System Design</a>
-                </div>
+          <div class="hero-contact-strip" aria-label="Quick contact links">
+            <a href="https://wa.me/0035799260049" target="_blank" rel="noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:hasan.cy99@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/hasan-jahoosh-bb457419a/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </section>
 
-                <div class="f-col f-contact">
-                    <h4>Get in touch</h4>
-                    <a href="mailto:hasan.cy99@gmail.com"><i class="fa-solid fa-envelope"></i>
-                        hasan.cy99@gmail.com</a>
-                    <a href="tel:+35799260049"><i class="fa-solid fa-phone"></i> +357 99260049</a>
-                    <span><i class="fa-solid fa-location-dot"></i> Nicosia, Cyprus</span>
-                    <a class="f-cv" href="Hasan_Jahoush_CV.html" target="_blank"><i
-                            class="fa-solid fa-file-arrow-down"></i> Download CV</a>
-                </div>
-            </div>
+        <aside class="hero-visual" aria-label="Hasan service credentials">
+          <div class="signal-orbit" aria-hidden="true"></div>
+          <div class="portrait-card">
+            <img src="img/profile.jpg" alt="Hasan Jahoush portrait">
+          </div>
+          <div class="metric-card metric-top">
+            <span>5+ years</span>
+            <strong>software delivery</strong>
+          </div>
+          <div class="metric-card metric-bottom">
+            <span>Nicosia</span>
+            <strong>Cyprus + remote</strong>
+          </div>
+        </aside>
+      </div>
+    </main>
 
-            <div class="footer-bottom">
-                <span>© 2026 Hasan Jahoush. All rights reserved.</span>
-                <span>Designed &amp; built by <b>Hasan Jahoush</b></span>
-            </div>
-        </footer>
+    <section class="service-section services" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">Services</p>
+        <h2>Buy the outcome, not a pile of code.</h2>
+        <p>Each service starts with the workflow that is wasting time, then ships the smallest reliable system that proves value.</p>
+      </div>
 
+      <div class="service-grid">
+        <a class="service-card" href="services.html#ai-agents">
+          <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>AI Agents</h3>
+          <p>Agents that answer questions, qualify leads, and route requests into the tools your team already uses.</p>
+          <ul>
+            <li>Customer questions answered faster</li>
+            <li>Lead routing and follow-up logic</li>
+            <li>AI connected to real workflows</li>
+          </ul>
+        </a>
 
+        <a class="service-card" href="services.html#automation">
+          <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+          <h3>Business Automation</h3>
+          <p>Remove repeated admin steps from forms, calls, messages, spreadsheets, and internal handoffs.</p>
+          <ul>
+            <li>Clear workflow mapping</li>
+            <li>Less manual copying and chasing</li>
+            <li>Simple systems staff can use</li>
+          </ul>
+        </a>
 
+        <a class="service-card" href="services.html#web-design">
+          <div class="service-icon"><i class="fa-solid fa-display"></i></div>
+          <h3>Web Design & Development</h3>
+          <p>Fast, mobile-first websites that make your services, trust signals, and contact paths obvious.</p>
+          <ul>
+            <li>Service-led copy and structure</li>
+            <li>Responsive static or full-stack builds</li>
+            <li>Conversion-focused contact paths</li>
+          </ul>
+        </a>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="script/jquery-3.6.0.js"></script>
-        <script src="script/script.js"></script>
-        <script>
-            // Dynamic navbar: add .scrolled once the page is scrolled
-            (function () {
-                var nav = document.querySelector('nav');
-                function onScroll() {
-                    if (window.scrollY > 30) {
-                        nav.classList.add('scrolled');
-                    } else {
-                        nav.classList.remove('scrolled');
-                    }
-                }
-                window.addEventListener('scroll', onScroll, { passive: true });
-                onScroll();
-            })();
-        </script>
-    </body>
+        <a class="service-card" href="services.html#seo">
+          <div class="service-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+          <h3>SEO & Local Visibility</h3>
+          <p>Reframe pages around real search intent so visitors find the right service and contact quickly.</p>
+          <ul>
+            <li>Metadata, headings, and schema</li>
+            <li>Local service positioning</li>
+            <li>Content structure that crawlers understand</li>
+          </ul>
+        </a>
 
+        <a class="service-card wide" href="services.html#backend">
+          <div class="service-icon"><i class="fa-solid fa-server"></i></div>
+          <h3>Backend & API Systems</h3>
+          <p>Secure APIs, integrations, dashboards, and internal systems that keep operations maintainable as the business grows.</p>
+          <ul>
+            <li>.NET and API architecture</li>
+            <li>Booking, lead, and data workflows</li>
+            <li>Systems designed for real maintenance</li>
+          </ul>
+        </a>
+      </div>
+    </section>
+
+    <section class="service-section workflows" id="workflows">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Workflows</p>
+        <h2>Tell me the workflow that burns time. I will map the fix.</h2>
+      </div>
+
+      <div class="workflow-list">
+        <a href="workflows.html#capture">
+          <span>01</span>
+          <h3>Capture the messy process</h3>
+          <p>Calls, forms, WhatsApp messages, spreadsheets, staff handoffs, and repeated admin steps.</p>
+        </a>
+        <a href="workflows.html#system">
+          <span>02</span>
+          <h3>Cut to the smallest useful system</h3>
+          <p>No enterprise theater. We pick the first flow that saves time or improves lead response.</p>
+        </a>
+        <a href="workflows.html#handover">
+          <span>03</span>
+          <h3>Ship, test, and hand it over</h3>
+          <p>You get a working system, clear notes, and a practical path for the next improvement.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="service-section proof" id="proof">
+      <div class="section-heading">
+        <p class="eyebrow">Proof</p>
+        <h2>Real builds, reframed as business outcomes.</h2>
+        <p>These examples show the kind of work that becomes a client system: service pages, booking paths, product flows, and backend-ready interfaces.</p>
+      </div>
+
+      <div class="proof-grid">
+        <a class="proof-card" href="my-wedsites_wxampels/bakery/main_page_en.html">
+          <img src="img/p2.png" alt="Bakery website project preview">
+          <div>
+            <span>Web presence</span>
+            <h3>Local business website</h3>
+            <p>Menu, product sections, and fast contact paths for a food business.</p>
+          </div>
+        </a>
+        <a class="proof-card" href="my-wedsites_wxampels/broker/index.html">
+          <img src="img/p3.png" alt="Broker website project preview">
+          <div>
+            <span>Lead generation</span>
+            <h3>Real estate landing flow</h3>
+            <p>Property messaging and conversion structure for buyers and sellers.</p>
+          </div>
+        </a>
+        <a class="proof-card" href="my-wedsites_wxampels/exapel-1/index.html">
+          <img src="img/p4.png" alt="Agency website project preview">
+          <div>
+            <span>Service structure</span>
+            <h3>Agency-style service site</h3>
+            <p>Portfolio, offer, and trust blocks that can be evolved into case studies.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="service-section insights" id="insights">
+      <div class="section-heading">
+        <p class="eyebrow">Insights</p>
+        <h2>What I look for before building.</h2>
+      </div>
+      <div class="insight-grid">
+        <a href="insights.html#workflow">
+          <h3>Do not automate confusion</h3>
+          <p>If the workflow is unclear, AI only makes the mess faster. Map the process first.</p>
+        </a>
+        <a href="insights.html#seo">
+          <h3>SEO starts with service clarity</h3>
+          <p>Search engines and visitors need the same thing: a clear offer, clear location, and clear next step.</p>
+        </a>
+        <a href="insights.html#systems">
+          <h3>Small systems win first</h3>
+          <p>The best first release removes one painful step, proves value, then expands.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-panel">
+        <p class="eyebrow">Book Consultation</p>
+        <h2>Bring one workflow you want removed from your day.</h2>
+        <p>I will tell you what I would automate first, what can stay manual, and what a useful first version should look like.</p>
+        <div class="contact-actions">
+          <a class="btn-primary-service" href="contact.html">Open Contact Page <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn-secondary-service" href="https://wa.me/0035799260049" target="_blank" rel="noreferrer">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <a class="footer-logo" href="index.html">Hasan Services</a>
+          <p>AI, web, SEO, automation, and backend engineering for businesses that want useful systems without enterprise overhead.</p>
+        </div>
+        <div>
+          <h3>Services</h3>
+          <a href="services.html#ai-agents">AI Agents</a>
+          <a href="services.html#automation">Business Automation</a>
+          <a href="services.html#web-design">Web Design</a>
+          <a href="services.html#seo">SEO</a>
+          <a href="services.html#backend">Backend Systems</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hasan.cy99@gmail.com">hasan.cy99@gmail.com</a>
+          <a href="tel:+35799260049">+357 99260049</a>
+          <a href="Hasan_Jahoush_CV.html" target="_blank">View CV</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>2026 Hasan Jahoush. Nicosia, Cyprus.</span>
+        <span>Built as a service-first static website.</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (function () {
+        var nav = document.querySelector(".service-nav");
+        function onScroll() {
+          nav.classList.toggle("scrolled", window.scrollY > 24);
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+      })();
+    </script>
+  </body>
 </html>

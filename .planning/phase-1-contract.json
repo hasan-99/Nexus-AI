@@ -1,0 +1,47 @@
+{
+  "phase": 1,
+  "name": "Service IA + Copy",
+  "waves": [
+    {
+      "wave": 1,
+      "tasks": ["T1", "T2", "T3"]
+    },
+    {
+      "wave": 2,
+      "tasks": ["T4"]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Service Content Map",
+      "files": ["index.html", ".planning/PRODUCT.md", ".planning/PROJECT.md"],
+      "acceptance": ["Hero and navigation are service-first", "Services are packaged as offers", "About content is secondary"]
+    },
+    {
+      "id": "T2",
+      "title": "SEO/Schema Direction",
+      "files": ["index.html", "robots.txt", "sitemap.xml"],
+      "acceptance": ["Metadata targets services", "JSON-LD includes service/business intent", "Anchors and sitemap are coherent"]
+    },
+    {
+      "id": "T3",
+      "title": "Visual Strategy",
+      "files": ["css/style.css", ".planning/DESIGN.md"],
+      "acceptance": ["Premium dark service-studio direction", "Responsive hero strategy", "Obsolete loud portfolio override neutralized"]
+    },
+    {
+      "id": "T4",
+      "title": "Static Homepage Rewrite",
+      "files": ["index.html", "css/style.css"],
+      "acceptance": ["Service-led first viewport", "Consultation CTA", "Services/process/proof/about/contact sections", "Browser QA clean"]
+    }
+  ],
+  "validation": [
+    "HTTP 200 on local static server",
+    "Desktop screenshot no hero clipping",
+    "Mobile screenshot no horizontal scroll",
+    "No critical console errors"
+  ]
+}
+
