@@ -35,7 +35,7 @@
     b.strokeText(COPY, 0, this.bound.height * 0.8);
     this.data = b.getImageData(0, 0, Math.max(1, Math.ceil(this.bound.width)), Math.ceil(this.bound.height));
     this.index = 0;
-    this.delay = 2; this.basedelay = 2;
+    this.delay = 5; this.basedelay = 5;
   }
   Text.prototype.update = function () {
     if (this.index >= this.bound.width) { this.index = 0; return; }
@@ -49,7 +49,7 @@
         if (Math.random() > 0.45) particles.push(new Particles(x, y));
       }
     }
-    if (this.delay-- < 0) { this.index += 2; this.delay += this.basedelay; }
+    if (this.delay-- < 0) { this.index += 1; this.delay += this.basedelay; }
   };
   Text.prototype.render = function () {
     ctx.putImageData(this.data, this.x, this.y, 0, 0, this.index, this.bound.height);
