@@ -496,41 +496,43 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 /* ---------- PROCESS STAMP BLOCKS ---------- */
-/* ---------- PROCESS — AI command console ---------- */
+/* ---------- PROCESS — AI command console (card) ---------- */
 .terminal {
-  max-width: 780px; margin: 1.8rem auto 0;
-  border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  max-width: 820px; margin: 2rem auto 0;
+  border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
   background: var(--panel);
-  box-shadow: 0 26px 64px oklch(0.55 0.06 233 / 0.16);
+  box-shadow: 0 30px 70px oklch(0.55 0.06 233 / 0.18);
   font-family: var(--mono);
 }
 .term-bar {
   display: flex; align-items: center; gap: 0.45rem;
-  padding: 0.7rem 1rem; border-bottom: 1px solid var(--line);
+  padding: 0.85rem 1.2rem; border-bottom: 1px solid var(--line);
   background: var(--panel-2);
 }
-.term-bar .td { width: 11px; height: 11px; border-radius: 50%; background: var(--line); }
+.term-bar .td { width: 12px; height: 12px; border-radius: 50%; background: var(--line); }
 .term-bar .td:nth-child(1) { background: oklch(0.72 0.16 28); }
 .term-bar .td:nth-child(2) { background: oklch(0.82 0.13 90); }
 .term-bar .td:nth-child(3) { background: oklch(0.78 0.16 150); }
-.term-title { margin-left: 0.6rem; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--dim); }
+.term-title { margin-left: 0.7rem; font-size: 0.74rem; letter-spacing: 0.08em; color: var(--dim); }
 .term-body {
-  padding: clamp(1.1rem, 2.4vw, 1.8rem) clamp(1.1rem, 2.6vw, 1.9rem);
-  display: grid; gap: 0.55rem;
-  font-size: clamp(0.82rem, 1.4vw, 0.98rem); line-height: 1.5;
+  padding: clamp(1.4rem, 2.8vw, 2.2rem) clamp(1.3rem, 2.8vw, 2.1rem);
+  display: grid; gap: clamp(0.9rem, 1.8vw, 1.3rem);
+  font-size: clamp(0.84rem, 1.4vw, 1rem); line-height: 1.6;
 }
-.tl { margin: 0; opacity: 0; transform: translateY(4px); transition: opacity 240ms var(--ease), transform 240ms var(--ease); }
+.tl { margin: 0; opacity: 0; transform: translateY(5px); transition: opacity 240ms var(--ease), transform 240ms var(--ease); }
 .tl.show { opacity: 1; transform: none; }
 html:not(.js) .tl { opacity: 1; transform: none; }
 .tl.cmd { color: var(--text); }
 .tl.cmd::before { content: "$ "; color: var(--accent); font-weight: 700; }
-.tl.ok { color: var(--text); padding-left: 0.2rem; }
+.tl.ok { color: var(--text); }
 .ok-mark { color: oklch(0.66 0.16 150); font-weight: 700; }
-.ok-i { color: var(--accent); font-weight: 700; }
-.tl-desc { color: var(--muted); }
-.tl.done { color: oklch(0.6 0.15 160); font-weight: 600; margin-top: 0.2rem; }
+.ok-i { color: var(--accent); font-weight: 700; margin-right: 0.3rem; }
+.ok-h { font-weight: 600; }
+/* description on its own spaced line, indented under the check */
+.tl-desc { display: block; margin-top: 0.35rem; padding-left: 1.5rem; color: var(--muted); font-size: 0.92em; }
+.tl.done { color: oklch(0.6 0.15 160); font-weight: 600; margin-top: 0.3rem; }
 .caret {
-  display: inline-block; width: 8px; height: 1.05em; vertical-align: -0.18em; margin-left: 5px;
+  display: inline-block; width: 9px; height: 1.05em; vertical-align: -0.18em; margin-left: 6px;
   background: var(--accent); animation: term-blink 1s steps(1) infinite;
 }
 @keyframes term-blink { 50% { opacity: 0; } }
