@@ -2078,21 +2078,33 @@ html.js .svc-card.js-reveal.revealed { opacity: 1; transform: none; }
 
 .ab-block { padding-block: clamp(2.4rem, 5vw, 4rem); }
 
-.ab-exp { display: grid; gap: 1rem; margin-top: 1.6rem; }
-.ab-job {
-  display: grid; grid-template-columns: minmax(180px, 240px) 1fr; gap: clamp(1rem, 3vw, 2.4rem);
-  padding: clamp(1.4rem, 2.6vw, 2rem); border: 1px solid var(--line); border-radius: 16px;
+.ab-exp { display: grid; gap: 1.2rem; margin-top: 1.8rem; }
+.ab-role {
+  position: relative; overflow: hidden;
+  padding: clamp(1.5rem, 2.8vw, 2.2rem) clamp(1.6rem, 3vw, 2.4rem);
+  border: 1px solid var(--line); border-radius: 18px;
   background: linear-gradient(155deg, var(--card-grad-a), var(--card-grad-b));
-  transition: border-color 220ms var(--ease), box-shadow 220ms var(--ease), transform 220ms var(--ease);
+  box-shadow: 0 16px 38px oklch(0.55 0.05 233 / 0.1);
+  transition: transform 240ms var(--ease), border-color 240ms var(--ease), box-shadow 240ms var(--ease);
 }
-.ab-job:hover { border-color: var(--accent); box-shadow: 0 26px 56px oklch(0.55 0.08 233 / 0.16); transform: translateY(-3px); }
-.ab-job-side { display: flex; flex-direction: column; gap: 0.3rem; }
-.ab-job-org { font-family: var(--display); font-size: 1.05rem; color: var(--text); text-transform: uppercase; letter-spacing: -0.01em; }
-.ab-job-date { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--accent); }
-.ab-job-main h3 { margin: 0 0 0.7rem; font-style: italic; font-size: 1rem; color: var(--muted); font-family: var(--body); font-weight: 700; }
-.ab-job-main ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
-.ab-job-main li { position: relative; padding-left: 1.4rem; color: var(--muted); line-height: 1.55; }
-.ab-job-main li::before { content: "\25B8"; position: absolute; left: 0; color: var(--accent); }
+.ab-role:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 28px 58px oklch(0.55 0.08 233 / 0.18); }
+.ab-role::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(var(--accent), var(--warm-2)); }
+.ab-role--now::before { background: linear-gradient(oklch(0.82 0.15 152), oklch(0.7 0.16 162)); }
+.ab-role-head { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; }
+.ab-role-org {
+  font-family: var(--display), "Archivo Black Fallback"; font-size: clamp(1.4rem, 3vw, 2.1rem); line-height: 1; letter-spacing: -0.025em; text-transform: uppercase;
+  background: linear-gradient(118deg, var(--accent), var(--warm-2) 70%, oklch(0.7 0.16 300));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+.ab-role-now { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.22rem 0.7rem; border-radius: 999px; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.3 0.08 160); background: oklch(0.86 0.15 155); }
+.ab-role-now::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: oklch(0.5 0.16 160); box-shadow: 0 0 0 0 oklch(0.55 0.18 160 / 0.7); animation: ab-now-pulse 1.8s ease-out infinite; }
+@keyframes ab-now-pulse { 0% { box-shadow: 0 0 0 0 oklch(0.55 0.18 160 / 0.7); } 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+.ab-role-meta { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: baseline; margin: 0.5rem 0 1.1rem; }
+.ab-role-title { font-style: italic; font-weight: 700; color: var(--muted); }
+.ab-role-date { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.05em; color: var(--accent); }
+.ab-role ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.55rem; }
+.ab-role li { position: relative; padding-left: 1.5rem; color: var(--muted); line-height: 1.55; }
+.ab-role li::before { content: ""; position: absolute; left: 1px; top: 0.5em; width: 8px; height: 8px; border-radius: 2px; transform: rotate(45deg); background: linear-gradient(var(--accent), var(--warm-2)); }
 
 .ab-ai-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-top: 1.8rem; }
 .ab-ai {
