@@ -1432,3 +1432,61 @@ html[data-theme="dark"] .theme-toggle .tt-moon { opacity: 0; transform: rotate(9
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle, .theme-toggle i { transition: none; }
 }
+
+/* ============================================================
+   SCROLL CINEMA — progress bar, word reveal, hero globe, Lenis
+   ============================================================ */
+
+/* Lenis smooth-scroll requirements */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Top scroll-progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1000002;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--accent), var(--warm-2));
+  box-shadow: 0 0 12px var(--accent);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Word-by-word heading reveal */
+.section-stamp h2 .rw, [data-reveal-words] .rw {
+  color: var(--dim);
+  opacity: 0.32;
+  transition: color 420ms var(--ease), opacity 420ms var(--ease), transform 420ms var(--ease);
+  display: inline-block;
+  transform: translateY(0.08em);
+}
+.section-stamp h2 .rw.on, [data-reveal-words] .rw.on {
+  color: var(--text);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero filament globe */
+.hero-globe {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.hero > .hero-meta,
+.hero > .brand-line,
+.hero > .hero-subcopy,
+.hero > .hero-actions { position: relative; z-index: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress { display: none; }
+  .section-stamp h2 .rw, [data-reveal-words] .rw { opacity: 1; color: var(--text); transform: none; }
+}
