@@ -1735,3 +1735,15 @@ html.lenis, html.lenis body { height: auto; }
   .mini-hero, .mini-row, .mini-cards span, .chat-msg, .chat-typing, .chat-typing i { animation: none; }
   .chat-typing { display: none; }
 }
+
+/* Footer "By Hasan Jahoush" credit — sky-blue accent */
+.by-credit {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: color 200ms var(--ease), text-shadow 200ms var(--ease);
+}
+.by-credit:hover, .by-credit:focus {
+  color: var(--warm-2);
+  text-shadow: 0 0 14px var(--accent-bg);
+}
