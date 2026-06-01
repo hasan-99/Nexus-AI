@@ -269,32 +269,21 @@
           <span class="num">03 / PROCESS</span>
           <h2 id="process-h">Tell me the problem that burns time. I map the fix.</h2>
         </div>
-        <ol class="process" role="list">
-          <li class="proc2-row js-reveal" style="--i:0">
-            <span class="proc2-n" aria-hidden="true">01</span>
-            <div class="proc2-body">
-              <span class="proc2-tag">Discover</span>
-              <h3>Capture the real problem</h3>
-              <p>Missed leads, a dated site, weak search visibility, quiet social, or repeated admin steps that quietly eat hours every week.</p>
-            </div>
-          </li>
-          <li class="proc2-row js-reveal" style="--i:1">
-            <span class="proc2-n" aria-hidden="true">02</span>
-            <div class="proc2-body">
-              <span class="proc2-tag">Focus</span>
-              <h3>Cut to the smallest useful system</h3>
-              <p>No agency theater. We pick the first move that gets you found, saves real time, or improves lead response, and scope it tight.</p>
-            </div>
-          </li>
-          <li class="proc2-row js-reveal" style="--i:2">
-            <span class="proc2-n" aria-hidden="true">03</span>
-            <div class="proc2-body">
-              <span class="proc2-tag">Deliver</span>
-              <h3>Ship, measure, and hand it over</h3>
-              <p>You get a working system, clear notes, and a practical path for the next improvement, not a dependency.</p>
-            </div>
-          </li>
-        </ol>
+        <div class="terminal js-reveal" role="group" aria-label="Our process: discover, focus, deliver">
+          <div class="term-bar" aria-hidden="true">
+            <span class="td"></span><span class="td"></span><span class="td"></span>
+            <span class="term-title">nexus ~/process</span>
+          </div>
+          <div class="term-body">
+            <p class="tl cmd" data-text="nexus run --discover"><span class="typed"></span></p>
+            <p class="tl ok"><span class="ok-mark">&#10003;</span> <span class="ok-i">01</span> capture the real problem <span class="tl-desc">&mdash; missed leads, a dated site, weak search, quiet social, or admin that eats hours.</span></p>
+            <p class="tl cmd" data-text="nexus run --focus"><span class="typed"></span></p>
+            <p class="tl ok"><span class="ok-mark">&#10003;</span> <span class="ok-i">02</span> cut to the smallest useful system <span class="tl-desc">&mdash; the first move that gets you found, saves real time, or improves lead response.</span></p>
+            <p class="tl cmd" data-text="nexus run --deliver"><span class="typed"></span></p>
+            <p class="tl ok"><span class="ok-mark">&#10003;</span> <span class="ok-i">03</span> ship, measure, and hand over <span class="tl-desc">&mdash; a working system, clear notes, and a path forward, not a dependency.</span></p>
+            <p class="tl done">&#10003; done &mdash; your system is live<span class="caret"></span></p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -510,6 +499,7 @@
     <script src="script/bg.js" defer></script>
     <script src="script/orbit.js" defer></script>
     <script src="script/vapor.js" defer></script>
+    <script src="script/term.js" defer></script>
     <script src="script/lightning.js" defer></script>
   </body>
 </html>

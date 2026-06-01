@@ -496,67 +496,45 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 /* ---------- PROCESS STAMP BLOCKS ---------- */
-/* ---------- PROCESS — editorial giant-number steps ---------- */
-.process { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 0; }
-.proc2-row {
-  position: relative;
-  display: grid;
-  grid-template-columns: clamp(96px, 16vw, 230px) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(1rem, 3vw, 3rem);
-  padding: clamp(1.4rem, 3vw, 2.4rem) clamp(0.6rem, 1.5vw, 1.4rem);
-  border-top: 1px solid var(--line);
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 600ms var(--ease), transform 600ms var(--ease), background 280ms var(--ease);
-  transition-delay: calc(var(--i) * 110ms);
+/* ---------- PROCESS — AI command console ---------- */
+.terminal {
+  max-width: 780px; margin: 1.8rem auto 0;
+  border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  background: var(--panel);
+  box-shadow: 0 26px 64px oklch(0.55 0.06 233 / 0.16);
+  font-family: var(--mono);
 }
-.proc2-row.revealed { opacity: 1; transform: none; }
-html:not(.js) .proc2-row { opacity: 1; transform: none; }
-.process .proc2-row:last-child { border-bottom: 1px solid var(--line); }
-
-/* hover: full-row accent wash + accent left marker */
-.proc2-row::before {
-  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-  background: linear-gradient(var(--accent), var(--warm-2));
-  transform: scaleY(0); transform-origin: top; transition: transform 320ms var(--ease-mech);
+.term-bar {
+  display: flex; align-items: center; gap: 0.45rem;
+  padding: 0.7rem 1rem; border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
 }
-.proc2-row:hover { background: linear-gradient(90deg, var(--accent-bg), transparent 70%); }
-.proc2-row:hover::before { transform: scaleY(1); }
-
-/* giant gradient number */
-.proc2-n {
-  font-family: var(--display), "Archivo Black Fallback"; font-weight: 900;
-  font-size: clamp(4rem, 11vw, 10rem); line-height: 0.82; letter-spacing: -0.05em;
-  background: linear-gradient(155deg, var(--accent), var(--warm-2) 55%, var(--accent-2));
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-  transition: transform 420ms var(--ease), filter 320ms var(--ease);
-  filter: drop-shadow(0 10px 24px oklch(0.6 0.13 233 / 0.18));
+.term-bar .td { width: 11px; height: 11px; border-radius: 50%; background: var(--line); }
+.term-bar .td:nth-child(1) { background: oklch(0.72 0.16 28); }
+.term-bar .td:nth-child(2) { background: oklch(0.82 0.13 90); }
+.term-bar .td:nth-child(3) { background: oklch(0.78 0.16 150); }
+.term-title { margin-left: 0.6rem; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--dim); }
+.term-body {
+  padding: clamp(1.1rem, 2.4vw, 1.8rem) clamp(1.1rem, 2.6vw, 1.9rem);
+  display: grid; gap: 0.55rem;
+  font-size: clamp(0.82rem, 1.4vw, 0.98rem); line-height: 1.5;
 }
-.proc2-row:hover .proc2-n { transform: translateX(6px) scale(1.04); filter: drop-shadow(0 14px 30px oklch(0.6 0.15 233 / 0.32)); }
-
-.proc2-tag {
-  display: inline-block; margin-bottom: 0.55rem;
-  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--accent);
+.tl { margin: 0; opacity: 0; transform: translateY(4px); transition: opacity 240ms var(--ease), transform 240ms var(--ease); }
+.tl.show { opacity: 1; transform: none; }
+html:not(.js) .tl { opacity: 1; transform: none; }
+.tl.cmd { color: var(--text); }
+.tl.cmd::before { content: "$ "; color: var(--accent); font-weight: 700; }
+.tl.ok { color: var(--text); padding-left: 0.2rem; }
+.ok-mark { color: oklch(0.66 0.16 150); font-weight: 700; }
+.ok-i { color: var(--accent); font-weight: 700; }
+.tl-desc { color: var(--muted); }
+.tl.done { color: oklch(0.6 0.15 160); font-weight: 600; margin-top: 0.2rem; }
+.caret {
+  display: inline-block; width: 8px; height: 1.05em; vertical-align: -0.18em; margin-left: 5px;
+  background: var(--accent); animation: term-blink 1s steps(1) infinite;
 }
-.proc2-tag::before { content: "// "; opacity: 0.7; }
-.proc2-body h3 {
-  margin: 0 0 0.55rem;
-  font-family: var(--display); font-size: clamp(1.3rem, 2.6vw, 2.1rem);
-  line-height: 1.02; text-transform: uppercase; letter-spacing: -0.025em; color: var(--text);
-  transition: transform 360ms var(--ease);
-}
-.proc2-row:hover .proc2-body h3 { transform: translateX(6px); }
-.proc2-body p { margin: 0; max-width: 64ch; color: var(--muted); line-height: 1.6; }
-
-@media (max-width: 620px) {
-  .proc2-row { grid-template-columns: 1fr; gap: 0.4rem; padding: 1.4rem 0.3rem; }
-  .proc2-n { font-size: clamp(3.4rem, 18vw, 5rem); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .proc2-row { opacity: 1; transform: none; }
-}
+@keyframes term-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .tl { opacity: 1; transform: none; } .caret { animation: none; } }
 
 /* ---------- METRIC MARQUEE (graft from command-deck) ---------- */
 .marquee {
