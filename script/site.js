@@ -62,6 +62,34 @@
     });
   }
 
+  // AI switchboard — hover/click a tab to swap the preview + retint the stage
+  var aiTabs = document.querySelectorAll(".ai-tab");
+  if (aiTabs.length) {
+    var aiPanels = document.querySelectorAll(".ai-panel");
+    var aiStage = document.querySelector(".ai-stage");
+    var aiPairs = [
+      ["oklch(0.72 0.16 222)", "oklch(0.64 0.16 248)"],
+      ["oklch(0.76 0.14 196)", "oklch(0.66 0.16 210)"],
+      ["oklch(0.66 0.17 280)", "oklch(0.6 0.18 300)"],
+      ["oklch(0.7 0.16 320)", "oklch(0.64 0.17 350)"]
+    ];
+    aiTabs.forEach(function (tab) {
+      var act = function () {
+        var i = parseInt(tab.getAttribute("data-i"), 10) || 0;
+        aiTabs.forEach(function (t) { t.classList.remove("active"); });
+        aiPanels.forEach(function (p) { p.classList.remove("active"); });
+        tab.classList.add("active");
+        if (aiPanels[i]) aiPanels[i].classList.add("active");
+        if (aiStage && aiPairs[i]) {
+          aiStage.style.setProperty("--c2", aiPairs[i][0]);
+          aiStage.style.setProperty("--c1", aiPairs[i][1]);
+        }
+      };
+      tab.addEventListener("mouseenter", act);
+      tab.addEventListener("click", act);
+    });
+  }
+
   // Count-up for [data-count] numbers when they scroll into view
   var counters = document.querySelectorAll("[data-count]");
   if (counters.length) {
