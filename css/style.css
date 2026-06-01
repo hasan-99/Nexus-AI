@@ -39,7 +39,7 @@
   --ticker-h:  0px;
   --maxw:      1200px;
   --pad-x:     clamp(1.1rem, 5vw, 5rem);
-  --pad-section: clamp(3.5rem, 8vw, 6.5rem);
+  --pad-section: clamp(2.4rem, 4.8vw, 4rem);
 
   --ease:      cubic-bezier(0.22, 1, 0.36, 1);
   --ease-mech: cubic-bezier(0.2, 0, 0, 1);
@@ -496,98 +496,66 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 /* ---------- PROCESS STAMP BLOCKS ---------- */
-/* ---------- PROCESS — glowing vertical timeline ---------- */
-.process { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 0; }
-.proc-step {
+/* ---------- PROCESS — editorial giant-number steps ---------- */
+.process { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 0; }
+.proc2-row {
   position: relative;
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  gap: clamp(1rem, 2.4vw, 2rem);
-  padding-bottom: clamp(1.4rem, 3vw, 2.4rem);
-  opacity: 0; transform: translateY(26px);
-  transition: opacity 600ms var(--ease), transform 600ms var(--ease);
-  transition-delay: calc(var(--i) * 120ms);
+  grid-template-columns: clamp(96px, 16vw, 230px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  padding: clamp(1.4rem, 3vw, 2.4rem) clamp(0.6rem, 1.5vw, 1.4rem);
+  border-top: 1px solid var(--line);
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 600ms var(--ease), transform 600ms var(--ease), background 280ms var(--ease);
+  transition-delay: calc(var(--i) * 110ms);
 }
-.proc-step.revealed { opacity: 1; transform: none; }
-html:not(.js) .proc-step { opacity: 1; transform: none; }
+.proc2-row.revealed { opacity: 1; transform: none; }
+html:not(.js) .proc2-row { opacity: 1; transform: none; }
+.process .proc2-row:last-child { border-bottom: 1px solid var(--line); }
 
-/* connector rail running down through the nodes */
-.proc-rail {
-  position: absolute; left: 31px; top: 56px; bottom: -2px; width: 2px;
-  background: var(--line); overflow: hidden;
+/* hover: full-row accent wash + accent left marker */
+.proc2-row::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(var(--accent), var(--warm-2));
+  transform: scaleY(0); transform-origin: top; transition: transform 320ms var(--ease-mech);
 }
-.proc-rail::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, var(--accent), var(--warm-2));
-  transform: scaleY(0); transform-origin: top;
-  transition: transform 700ms var(--ease-mech);
-  transition-delay: calc(var(--i) * 120ms + 250ms);
-}
-.proc-step.revealed .proc-rail::after { transform: scaleY(1); }
+.proc2-row:hover { background: linear-gradient(90deg, var(--accent-bg), transparent 70%); }
+.proc2-row:hover::before { transform: scaleY(1); }
 
-/* glowing numbered node */
-.proc-node {
-  position: relative; z-index: 1;
-  display: grid; place-items: center;
-  width: 64px; height: 64px; border-radius: 50%;
-  color: var(--warm-ink); font-size: 1.4rem;
-  background: radial-gradient(circle at 35% 30%, var(--warm-2), var(--accent) 70%);
-  box-shadow: 0 0 0 6px var(--accent-bg), 0 12px 28px oklch(0.55 0.12 233 / 0.32);
-}
-.proc-node::before {
-  content: ""; position: absolute; inset: -6px; border-radius: 50%;
-  border: 1px solid var(--accent); opacity: 0;
-  animation: proc-ping 3s var(--ease) infinite; animation-delay: calc(var(--i) * 0.5s);
-}
-@keyframes proc-ping { 0% { transform: scale(0.92); opacity: 0.5; } 70% { transform: scale(1.4); opacity: 0; } 100% { opacity: 0; } }
-.proc-step:last-child .proc-node {
-  background: radial-gradient(circle at 35% 30%, oklch(0.86 0.13 150), oklch(0.7 0.16 160) 70%);
-  box-shadow: 0 0 0 6px oklch(0.7 0.16 160 / 0.18), 0 12px 28px oklch(0.6 0.14 160 / 0.3);
-}
-.proc-step:last-child .proc-node::before { border-color: oklch(0.72 0.16 160); }
-
-/* glassy card */
-.proc-card {
-  position: relative; overflow: hidden;
-  padding: clamp(1.2rem, 2.4vw, 1.8rem) clamp(1.3rem, 2.6vw, 2rem);
-  border: 1px solid var(--line); border-radius: 16px;
-  background: linear-gradient(155deg, var(--card-grad-a), var(--card-grad-b));
-  box-shadow: 0 16px 38px oklch(0.55 0.05 233 / 0.10);
-  transform: translateZ(0);
-  transition: transform 240ms var(--ease), border-color 240ms var(--ease), box-shadow 240ms var(--ease);
-}
-.proc-card::before {
-  content: ""; position: absolute; inset: 0; z-index: 0; opacity: 0;
-  background: radial-gradient(120% 120% at 0% 0%, var(--accent-bg), transparent 55%);
-  transition: opacity 260ms var(--ease);
-}
-.proc-step:hover .proc-card { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 30px 64px oklch(0.55 0.08 233 / 0.18); }
-.proc-step:hover .proc-card::before { opacity: 1; }
-.proc-num {
-  position: absolute; top: -0.3em; right: 0.1em; z-index: 0;
+/* giant gradient number */
+.proc2-n {
   font-family: var(--display), "Archivo Black Fallback"; font-weight: 900;
-  font-size: clamp(4.5rem, 10vw, 7rem); line-height: 1;
-  color: transparent; -webkit-text-stroke: 1.5px var(--line);
-  opacity: 0.6; pointer-events: none;
-  transition: -webkit-text-stroke-color 300ms var(--ease), opacity 300ms var(--ease);
+  font-size: clamp(4rem, 11vw, 10rem); line-height: 0.82; letter-spacing: -0.05em;
+  background: linear-gradient(155deg, var(--accent), var(--warm-2) 55%, var(--accent-2));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  transition: transform 420ms var(--ease), filter 320ms var(--ease);
+  filter: drop-shadow(0 10px 24px oklch(0.6 0.13 233 / 0.18));
 }
-.proc-step:hover .proc-num { -webkit-text-stroke-color: var(--accent); opacity: 0.85; }
-.proc-card h3 {
-  position: relative; z-index: 1; margin: 0 0 0.6rem;
-  font-family: var(--display); font-size: clamp(1.2rem, 2.2vw, 1.65rem);
-  line-height: 1.05; text-transform: uppercase; letter-spacing: -0.02em; color: var(--text);
-}
-.proc-card p { position: relative; z-index: 1; margin: 0; max-width: 60ch; color: var(--muted); line-height: 1.6; }
+.proc2-row:hover .proc2-n { transform: translateX(6px) scale(1.04); filter: drop-shadow(0 14px 30px oklch(0.6 0.15 233 / 0.32)); }
 
-@media (max-width: 560px) {
-  .proc-step { grid-template-columns: 48px minmax(0, 1fr); gap: 0.9rem; }
-  .proc-node { width: 48px; height: 48px; font-size: 1.1rem; }
-  .proc-rail { left: 23px; top: 44px; }
+.proc2-tag {
+  display: inline-block; margin-bottom: 0.55rem;
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent);
+}
+.proc2-tag::before { content: "// "; opacity: 0.7; }
+.proc2-body h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--display); font-size: clamp(1.3rem, 2.6vw, 2.1rem);
+  line-height: 1.02; text-transform: uppercase; letter-spacing: -0.025em; color: var(--text);
+  transition: transform 360ms var(--ease);
+}
+.proc2-row:hover .proc2-body h3 { transform: translateX(6px); }
+.proc2-body p { margin: 0; max-width: 64ch; color: var(--muted); line-height: 1.6; }
+
+@media (max-width: 620px) {
+  .proc2-row { grid-template-columns: 1fr; gap: 0.4rem; padding: 1.4rem 0.3rem; }
+  .proc2-n { font-size: clamp(3.4rem, 18vw, 5rem); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .proc-step { opacity: 1; transform: none; }
-  .proc-rail::after { transform: scaleY(1); }
-  .proc-node::before { animation: none; }
+  .proc2-row { opacity: 1; transform: none; }
 }
 
 /* ---------- METRIC MARQUEE (graft from command-deck) ---------- */
@@ -1167,7 +1135,7 @@ html.js .orbit-fallback { display: none; }
 
 /* ---------- Animated word-cycle statement ---------- */
 .statement {
-  padding: clamp(3rem, 7vw, 5.5rem) var(--pad-x);
+  padding: clamp(2.2rem, 4.5vw, 3.6rem) var(--pad-x);
   text-align: center;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -1990,3 +1958,7 @@ html.js .svc-card.js-reveal.revealed { opacity: 1; transform: none; }
 }
 .db-storm-cta:hover .db-storm-hint i { transform: translateX(3px); }
 .db-storm-hint i { transition: transform 220ms var(--ease); }
+
+/* Tighten gap between PROCESS and the flow pipeline */
+#process { padding-bottom: clamp(1.6rem, 3.2vw, 2.6rem); }
+.flow-section { padding-top: clamp(1.8rem, 3.5vw, 2.8rem); }
