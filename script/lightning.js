@@ -31,7 +31,7 @@
     this.x = W * 0.5 - this.bound.width * 0.5;
     this.y = H * 0.5 - this.bound.height * 0.5;
     b.lineWidth = 1.4;
-    b.strokeStyle = "rgba(23,42,99,0.92)";
+    b.strokeStyle = "rgba(255,255,255,0.96)";
     b.strokeText(COPY, 0, this.bound.height * 0.8);
     this.data = b.getImageData(0, 0, Math.max(1, Math.ceil(this.bound.width)), Math.ceil(this.bound.height));
     this.index = 0;
