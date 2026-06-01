@@ -134,7 +134,7 @@
   }
   function renderStatic() {
     ctx.globalCompositeOperation = "source-over"; ctx.globalAlpha = 1;
-    ctx.fillStyle = "#0b1220"; ctx.fillRect(0, 0, W, H);
+    ctx.clearRect(0, 0, W, H);
     ctx.globalCompositeOperation = "screen";
     text.index = Math.ceil(text.bound.width); text.render();
   }

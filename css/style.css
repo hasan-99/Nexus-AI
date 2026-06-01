@@ -1880,3 +1880,34 @@ html.js .svc-card.js-reveal.revealed { opacity: 1; transform: none; }
 /* Tighten the gap below the project-flow pipeline */
 .flow-section { padding-bottom: clamp(1.8rem, 3.5vw, 3rem); }
 .flow-section + .section { padding-top: clamp(2rem, 4vw, 3.2rem); }
+
+/* ---------- Demo band STORM variant (lightning heading) ---------- */
+.demo-band--storm {
+  background: radial-gradient(120% 130% at 50% 0%, #0e1830, #070b16 85%);
+}
+.demo-band--storm::before, .demo-band--storm::after { display: none; }
+.demo-band--storm .db-copy { max-width: 620px; }
+.demo-band--storm #lightning {
+  position: relative;
+  width: 100%;
+  height: clamp(110px, 15vw, 170px);
+  margin: 0.2rem 0 0.4rem -0.4rem;
+  cursor: crosshair;
+}
+.demo-band--storm #lightning canvas { display: block; width: 100%; height: 100%; }
+.demo-band--storm .db-badge { border-color: oklch(0.7 0.12 233 / 0.5); }
+.demo-band--storm p { color: oklch(0.82 0.03 250); }
+
+/* Small lightning "screen" inside the bright demo band */
+.db-storm {
+  width: 100%; max-width: 460px;
+  height: clamp(82px, 10.5vw, 118px);
+  margin: 0.3rem 0 0.6rem;
+  border-radius: 12px;
+  background: radial-gradient(120% 140% at 50% 0%, #14254a, #070b16 92%);
+  border: 1px solid oklch(1 0 0 / 0.28);
+  box-shadow: inset 0 0 28px oklch(0.45 0.16 256 / 0.45);
+  overflow: hidden; cursor: crosshair;
+}
+.db-storm #lightning { position: relative; width: 100%; height: 100%; }
+.db-storm #lightning canvas { display: block; width: 100%; height: 100%; }
