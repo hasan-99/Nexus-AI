@@ -15,7 +15,8 @@
     { id: 5, label: "Social",     cat: "GROW",      icon: "fa-hashtag",                desc: "A consistent presence and campaigns that grow reach, trust, and inbound.", related: [4, 8], slug: "social" },
     { id: 6, label: "Automation", cat: "AUTOMATE",  icon: "fa-gears",                  desc: "Remove repeated admin from forms, calls, messages, and handoffs.", related: [2, 7], slug: "automation" },
     { id: 7, label: "Backend",    cat: "BUILD",     icon: "fa-server",                 desc: "Secure APIs, integrations, and dashboards that stay maintainable as you grow.", related: [6, 2], slug: "backend" },
-    { id: 8, label: "Branding",   cat: "BRAND",     icon: "fa-shapes",                 desc: "A logo, system, and voice that make a small business look established.", related: [1, 5], slug: "branding" }
+    { id: 8, label: "Branding",   cat: "BRAND",     icon: "fa-shapes",                 desc: "A logo, system, and voice that make a small business look established.", related: [1, 5], slug: "branding" },
+    { id: 9, label: "Mobile Apps", cat: "BUILD",    icon: "fa-mobile-screen-button",   desc: "Native-feel iOS and Android apps, from booking and loyalty to internal tools.", related: [1, 7], slug: "mobile-apps" }
   ];
 
   // Clear fallback, build stage
