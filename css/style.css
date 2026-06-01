@@ -496,46 +496,99 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 /* ---------- PROCESS STAMP BLOCKS ---------- */
-.process { display: grid; gap: 0; }
-.process-block {
+/* ---------- PROCESS — glowing vertical timeline ---------- */
+.process { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 0; }
+.proc-step {
   position: relative;
   display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
-  gap: 1.5rem;
-  align-items: start;
-  padding: clamp(1.6rem, 3vw, 2.4rem) 0;
-  border-top: 1px solid var(--line);
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: clamp(1rem, 2.4vw, 2rem);
+  padding-bottom: clamp(1.4rem, 3vw, 2.4rem);
+  opacity: 0; transform: translateY(26px);
+  transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+  transition-delay: calc(var(--i) * 120ms);
 }
-.process-block:last-child { border-bottom: 1px solid var(--line); }
-.process-block::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--accent);
-  transform: scaleY(0);
-  transform-origin: top;
+.proc-step.revealed { opacity: 1; transform: none; }
+html:not(.js) .proc-step { opacity: 1; transform: none; }
+
+/* connector rail running down through the nodes */
+.proc-rail {
+  position: absolute; left: 31px; top: 56px; bottom: -2px; width: 2px;
+  background: var(--line); overflow: hidden;
 }
-html.js .process-block.revealed::before { transform: scaleY(1); transition: transform 320ms var(--ease-mech); }
-html:not(.js) .process-block::before { transform: scaleY(1); }
-.process-block .pnum {
-  font-family: var(--display);
-  font-size: clamp(2.8rem, 6vw, 4.6rem);
-  line-height: 0.8;
-  color: var(--line);
-  letter-spacing: -0.04em;
+.proc-rail::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--accent), var(--warm-2));
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 700ms var(--ease-mech);
+  transition-delay: calc(var(--i) * 120ms + 250ms);
 }
-.process-block h3 {
-  margin: 0 0 0.6rem;
-  font-family: var(--display);
-  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
-  line-height: 1.05;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+.proc-step.revealed .proc-rail::after { transform: scaleY(1); }
+
+/* glowing numbered node */
+.proc-node {
+  position: relative; z-index: 1;
+  display: grid; place-items: center;
+  width: 64px; height: 64px; border-radius: 50%;
+  color: var(--warm-ink); font-size: 1.4rem;
+  background: radial-gradient(circle at 35% 30%, var(--warm-2), var(--accent) 70%);
+  box-shadow: 0 0 0 6px var(--accent-bg), 0 12px 28px oklch(0.55 0.12 233 / 0.32);
 }
-.process-block p { margin: 0; max-width: 62ch; color: var(--muted); }
+.proc-node::before {
+  content: ""; position: absolute; inset: -6px; border-radius: 50%;
+  border: 1px solid var(--accent); opacity: 0;
+  animation: proc-ping 3s var(--ease) infinite; animation-delay: calc(var(--i) * 0.5s);
+}
+@keyframes proc-ping { 0% { transform: scale(0.92); opacity: 0.5; } 70% { transform: scale(1.4); opacity: 0; } 100% { opacity: 0; } }
+.proc-step:last-child .proc-node {
+  background: radial-gradient(circle at 35% 30%, oklch(0.86 0.13 150), oklch(0.7 0.16 160) 70%);
+  box-shadow: 0 0 0 6px oklch(0.7 0.16 160 / 0.18), 0 12px 28px oklch(0.6 0.14 160 / 0.3);
+}
+.proc-step:last-child .proc-node::before { border-color: oklch(0.72 0.16 160); }
+
+/* glassy card */
+.proc-card {
+  position: relative; overflow: hidden;
+  padding: clamp(1.2rem, 2.4vw, 1.8rem) clamp(1.3rem, 2.6vw, 2rem);
+  border: 1px solid var(--line); border-radius: 16px;
+  background: linear-gradient(155deg, var(--card-grad-a), var(--card-grad-b));
+  box-shadow: 0 16px 38px oklch(0.55 0.05 233 / 0.10);
+  transform: translateZ(0);
+  transition: transform 240ms var(--ease), border-color 240ms var(--ease), box-shadow 240ms var(--ease);
+}
+.proc-card::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; opacity: 0;
+  background: radial-gradient(120% 120% at 0% 0%, var(--accent-bg), transparent 55%);
+  transition: opacity 260ms var(--ease);
+}
+.proc-step:hover .proc-card { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 30px 64px oklch(0.55 0.08 233 / 0.18); }
+.proc-step:hover .proc-card::before { opacity: 1; }
+.proc-num {
+  position: absolute; top: -0.3em; right: 0.1em; z-index: 0;
+  font-family: var(--display), "Archivo Black Fallback"; font-weight: 900;
+  font-size: clamp(4.5rem, 10vw, 7rem); line-height: 1;
+  color: transparent; -webkit-text-stroke: 1.5px var(--line);
+  opacity: 0.6; pointer-events: none;
+  transition: -webkit-text-stroke-color 300ms var(--ease), opacity 300ms var(--ease);
+}
+.proc-step:hover .proc-num { -webkit-text-stroke-color: var(--accent); opacity: 0.85; }
+.proc-card h3 {
+  position: relative; z-index: 1; margin: 0 0 0.6rem;
+  font-family: var(--display); font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  line-height: 1.05; text-transform: uppercase; letter-spacing: -0.02em; color: var(--text);
+}
+.proc-card p { position: relative; z-index: 1; margin: 0; max-width: 60ch; color: var(--muted); line-height: 1.6; }
+
+@media (max-width: 560px) {
+  .proc-step { grid-template-columns: 48px minmax(0, 1fr); gap: 0.9rem; }
+  .proc-node { width: 48px; height: 48px; font-size: 1.1rem; }
+  .proc-rail { left: 23px; top: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .proc-step { opacity: 1; transform: none; }
+  .proc-rail::after { transform: scaleY(1); }
+  .proc-node::before { animation: none; }
+}
 
 /* ---------- METRIC MARQUEE (graft from command-deck) ---------- */
 .marquee {

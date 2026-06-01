@@ -35,7 +35,7 @@
     b.strokeText(COPY, 0, this.bound.height * 0.8);
     this.data = b.getImageData(0, 0, Math.max(1, Math.ceil(this.bound.width)), Math.ceil(this.bound.height));
     this.index = 0;
-    this.delay = 5; this.basedelay = 5;
+    this.delay = 2; this.basedelay = 2;
   }
   Text.prototype.update = function () {
     if (this.index >= this.bound.width) { this.index = 0; return; }
