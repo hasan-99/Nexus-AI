@@ -31,7 +31,7 @@
     this.x = W * 0.5 - this.bound.width * 0.5;
     this.y = H * 0.5 - this.bound.height * 0.5;
     b.lineWidth = 1.4;
-    b.strokeStyle = "rgba(255,255,255,0.95)";
+    b.strokeStyle = "rgba(23,42,99,0.92)";
     b.strokeText(COPY, 0, this.bound.height * 0.8);
     this.data = b.getImageData(0, 0, Math.max(1, Math.ceil(this.bound.width)), Math.ceil(this.bound.height));
     this.index = 0;
@@ -57,7 +57,7 @@
 
   function Thunder(x, y) {
     this.lifespan = Math.round(Math.random() * 10 + 10); this.maxlife = this.lifespan;
-    this.color = "#ffffff"; this.glow = "#62d8ff";
+    this.color = "#1d3fb8"; this.glow = "#3f7fff";
     this.x = x; this.y = y; this.width = 2;
     this.direct = Math.random() * Math.PI * 2;
     this.max = Math.round(Math.random() * 8 + 14);
@@ -85,10 +85,10 @@
     ctx.stroke(); ctx.closePath(); ctx.shadowBlur = 0;
     var strength = Math.random() * 60 + 30;
     var light = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, strength);
-    light.addColorStop(0, "rgba(120,220,255,0.55)");
-    light.addColorStop(0.1, "rgba(90,190,255,0.22)");
-    light.addColorStop(0.5, "rgba(56,189,248,0.05)");
-    light.addColorStop(1, "rgba(56,189,248,0)");
+    light.addColorStop(0, "rgba(40,90,220,0.32)");
+    light.addColorStop(0.1, "rgba(40,90,220,0.14)");
+    light.addColorStop(0.5, "rgba(40,90,220,0.04)");
+    light.addColorStop(1, "rgba(40,90,220,0)");
     ctx.beginPath(); ctx.fillStyle = light; ctx.arc(this.x, this.y, strength, 0, Math.PI * 2); ctx.fill(); ctx.closePath();
   };
 
@@ -99,7 +99,7 @@
     this.g = { direct: Math.PI * 0.5 + (Math.random() * 0.4 - 0.2), weight: Math.random() * 0.25 + 0.25 };
     this.width = Math.random() * 2.4;
     this.lifespan = Math.round(Math.random() * 18 + 30); this.maxlife = this.lifespan;
-    this.color = "#aee9ff"; this.prev = { x: x, y: y };
+    this.color = "#1e40d0"; this.prev = { x: x, y: y };
   }
   Spark.prototype.update = function (i, arr) {
     this.prev = { x: this.x, y: this.y };
