@@ -1911,3 +1911,25 @@ html.js .svc-card.js-reveal.revealed { opacity: 1; transform: none; }
 }
 .db-storm #lightning { position: relative; width: 100%; height: 100%; }
 .db-storm #lightning canvas { display: block; width: 100%; height: 100%; }
+
+/* Right-side lightning CTA panel in the demo band */
+.db-storm-cta {
+  position: relative; flex-shrink: 0;
+  display: block; overflow: hidden;
+  width: clamp(280px, 36vw, 430px);
+  height: clamp(98px, 12vw, 138px);
+  background: transparent;
+  cursor: pointer;
+  transition: transform 220ms var(--ease);
+}
+.db-storm-cta:hover, .db-storm-cta:focus-visible { transform: translateY(-3px); }
+.db-storm-cta #lightning { position: absolute; inset: 0; width: 100%; height: 100%; }
+.db-storm-cta #lightning canvas { display: block; width: 100%; height: 100%; }
+.db-storm-hint {
+  position: absolute; right: 12px; bottom: 9px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: oklch(0.99 0.01 255);
+}
+.db-storm-cta:hover .db-storm-hint i { transform: translateX(3px); }
+.db-storm-hint i { transition: transform 220ms var(--ease); }

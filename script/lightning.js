@@ -31,7 +31,7 @@
     this.x = W * 0.5 - this.bound.width * 0.5;
     this.y = H * 0.5 - this.bound.height * 0.5;
     b.lineWidth = 1.4;
-    b.strokeStyle = "rgba(120,200,250,0.92)";
+    b.strokeStyle = "rgba(255,255,255,0.95)";
     b.strokeText(COPY, 0, this.bound.height * 0.8);
     this.data = b.getImageData(0, 0, Math.max(1, Math.ceil(this.bound.width)), Math.ceil(this.bound.height));
     this.index = 0;
@@ -57,7 +57,7 @@
 
   function Thunder(x, y) {
     this.lifespan = Math.round(Math.random() * 10 + 10); this.maxlife = this.lifespan;
-    this.color = "#ffffff"; this.glow = "#38bdf8";
+    this.color = "#ffffff"; this.glow = "#cfe6ff";
     this.x = x; this.y = y; this.width = 2;
     this.direct = Math.random() * Math.PI * 2;
     this.max = Math.round(Math.random() * 8 + 14);
@@ -85,10 +85,10 @@
     ctx.stroke(); ctx.closePath(); ctx.shadowBlur = 0;
     var strength = Math.random() * 60 + 30;
     var light = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, strength);
-    light.addColorStop(0, "rgba(56,189,248,0.55)");
-    light.addColorStop(0.1, "rgba(56,189,248,0.2)");
-    light.addColorStop(0.5, "rgba(56,189,248,0.04)");
-    light.addColorStop(1, "rgba(56,189,248,0)");
+    light.addColorStop(0, "rgba(255,255,255,0.45)");
+    light.addColorStop(0.1, "rgba(255,255,255,0.18)");
+    light.addColorStop(0.5, "rgba(255,255,255,0.04)");
+    light.addColorStop(1, "rgba(255,255,255,0)");
     ctx.beginPath(); ctx.fillStyle = light; ctx.arc(this.x, this.y, strength, 0, Math.PI * 2); ctx.fill(); ctx.closePath();
   };
 
@@ -99,7 +99,7 @@
     this.g = { direct: Math.PI * 0.5 + (Math.random() * 0.4 - 0.2), weight: Math.random() * 0.25 + 0.25 };
     this.width = Math.random() * 2.4;
     this.lifespan = Math.round(Math.random() * 18 + 30); this.maxlife = this.lifespan;
-    this.color = "#7dd3fc"; this.prev = { x: x, y: y };
+    this.color = "#ffffff"; this.prev = { x: x, y: y };
   }
   Spark.prototype.update = function (i, arr) {
     this.prev = { x: this.x, y: this.y };
@@ -135,7 +135,6 @@
   function renderStatic() {
     ctx.globalCompositeOperation = "source-over"; ctx.globalAlpha = 1;
     ctx.clearRect(0, 0, W, H);
-    ctx.globalCompositeOperation = "screen";
     text.index = Math.ceil(text.bound.width); text.render();
   }
   function loop() {
@@ -147,8 +146,7 @@
     for (i = 0; i < particles.length; i++) particles[i].update();
     if (particles.length > 60) particles.splice(0, particles.length - 60);
     ctx.globalCompositeOperation = "source-over"; ctx.globalAlpha = 1;
-    ctx.fillStyle = "#0b1220"; ctx.fillRect(0, 0, W, H);
-    ctx.globalCompositeOperation = "screen";
+    ctx.clearRect(0, 0, W, H);
     text.render();
     for (i = 0; i < thunder.length; i++) thunder[i].render();
     for (i = 0; i < particles.length; i++) particles[i].render();
