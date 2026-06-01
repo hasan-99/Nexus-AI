@@ -1,17 +1,17 @@
 ---
 project_type: full
 template_type: website
-client: Jahouse Nexus / Hasan Jahoush
+client: Nexus AI / Hasan Jahoush
 status: active
 ---
 
-# Jahouse Nexus — Services Website
+# Nexus AI — Services Website
 
 ## Client
-Jahouse Nexus — studio founded by Hasan Jahoush, Nicosia, Cyprus. Logo mark: "JN". Tagline: "We think, you grow."
+Nexus AI — studio founded by Hasan Jahoush, Nicosia, Cyprus. Logo mark: "JN". Tagline: "We think, you grow."
 
 ## Project Type
-Full project: a services-first static website for a Cyprus digital studio. Not a personal portfolio — the brand is Jahouse Nexus, and every page is built to sell services and drive consultation inquiries.
+Full project: a services-first static website for a Cyprus digital studio. Not a personal portfolio — the brand is Nexus AI, and every page is built to sell services and drive consultation inquiries.
 
 ## What We're Building
 A bold brutalist "engineering field manual" service site presenting 8 studio services to small businesses and local operators. Visitors should understand within five seconds what the studio offers and how to engage.
@@ -40,9 +40,9 @@ Canonical domain: https://hasanjahoush.com/
 Visitors understand within five seconds: what the studio does, what problems are solved, how to book. No ambiguity about whether this is a personal blog or a business.
 
 ## Requirements
-- [ ] REQ-001: Present the site as Jahouse Nexus — studio brand, not personal portfolio.
+- [ ] REQ-001: Present the site as Nexus AI — studio brand, not personal portfolio.
 - [ ] REQ-002: All 8 services listed with outcome-led descriptions and consultation CTAs.
-- [ ] REQ-003: Strong conversion paths: consultation CTA, WhatsApp (+35799260049), email (hasan.cy99@gmail.com), service inquiry prefill.
+- [ ] REQ-003: Strong conversion paths: consultation CTA, WhatsApp (+35799260049), email (jahousenexus@gmail.com), service inquiry prefill.
 - [ ] REQ-004: Live proof — Refalco Group (refalco.com) featured as primary case reference.
 - [ ] REQ-005: SEO metadata reflects studio/business intent, not personal-resume schema.
 - [ ] REQ-006: Static implementation maintained — no build step, no framework migration.
@@ -70,7 +70,7 @@ Brutalist "engineering field manual": warm near-black backgrounds, gold-only acc
 ## Decisions
 | Decision | Why |
 |----------|-----|
-| Brand as Jahouse Nexus, not personal portfolio | The business goal is to sell studio services; a personal-name portfolio frame undermines that. |
+| Brand as Nexus AI, not personal portfolio | The business goal is to sell studio services; a personal-name portfolio frame undermines that. |
 | Gold-only palette — teal dropped | Teal read as Qualia Solutions' colour; independent brand requires clear differentiation. |
 | Brutalist field-manual aesthetic | Chosen via a 4-concept judge panel; stands out from generic dark SaaS landing pages. |
 | Keep static — no React/shadcn | MVP can ship without framework overhead; vanilla JS covers all interactive requirements. |

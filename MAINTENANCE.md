@@ -1,14 +1,14 @@
-# Jahouse Nexus — Maintenance & Deployment Handoff
+# Nexus AI — Maintenance & Deployment Handoff
 
 **Site:** https://hasanjahoush.com/  
-**Studio:** Jahouse Nexus — Hasan Jahoush, Nicosia, Cyprus + remote  
+**Studio:** Nexus AI — Hasan Jahoush, Nicosia, Cyprus + remote  
 **Last updated:** 2026-06-01
 
 ---
 
 ## 1. What this site is
 
-A static, multi-page services site for Jahouse Nexus — a Cyprus digital studio. It markets 8 services (web design, AI, SEO, content, social, automation, backend, branding) with a "brutalist engineering field manual" aesthetic: dark warm near-black background, gold (#E0A23A / `oklch(0.82 0.135 78)`) as the sole accent colour, and three fonts (Archivo Black, Manrope, JetBrains Mono).
+A static, multi-page services site for Nexus AI — a Cyprus digital studio. It markets 8 services (web design, AI, SEO, content, social, automation, backend, branding) with a "brutalist engineering field manual" aesthetic: dark warm near-black background, gold (#E0A23A / `oklch(0.82 0.135 78)`) as the sole accent colour, and three fonts (Archivo Black, Manrope, JetBrains Mono).
 
 **There is no build step.** The site is plain HTML + CSS + vanilla JavaScript. No Node, no bundler, no transpilation. Files are served exactly as they exist on disk.
 
@@ -144,7 +144,7 @@ The `<span class="hl">` wraps the gold-highlighted last word. Move it to whichev
 The hero sub-copy immediately follows:
 
 ```html
-<p class="hero-subcopy">Jahouse Nexus is a Cyprus digital studio. …</p>
+<p class="hero-subcopy">Nexus AI is a Cyprus digital studio. …</p>
 ```
 
 ---
@@ -189,7 +189,7 @@ The featured proof card appears in two places.
 ```html
 <a class="proof-featured" href="https://refalco.com/" target="_blank" rel="noreferrer">
   <div class="shot">
-    <img src="img/refalco.jpeg" alt="Refalco Group website built by Jahouse Nexus — premium dark corporate homepage">
+    <img src="img/refalco.jpeg" alt="Refalco Group website built by Nexus AI — premium dark corporate homepage">
   </div>
   <div class="body">
     <span class="tag"><i class="fa-solid fa-circle" style="font-size:.5em"></i> Live in production</span>
@@ -234,7 +234,7 @@ All contact links are plain HTML — no form backend, no server.
 
 | Channel | How it works |
 |---|---|
-| Email | `<a href="mailto:hasan.cy99@gmail.com">` — opens the user's email client |
+| Email | `<a href="mailto:jahousenexus@gmail.com">` — opens the user's email client |
 | WhatsApp | `<a href="https://wa.me/0035799260049">` — opens WhatsApp chat |
 | Phone | `<a href="tel:+35799260049">` — native call on mobile |
 | LinkedIn | External link to profile |
@@ -312,9 +312,9 @@ After every deploy, confirm all five:
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Jahouse Nexus",
+  "name": "Nexus AI",
   "telephone": "+35799260049",
-  "email": "mailto:hasan.cy99@gmail.com",
+  "email": "mailto:jahousenexus@gmail.com",
   "address": { "addressLocality": "Nicosia", "addressCountry": "Cyprus" }
 }
 ```

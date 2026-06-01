@@ -1,5 +1,5 @@
 /* Services orbit — interactive "system map".
-   Vanilla port of a radial orbital timeline, in the Jahouse Nexus gold theme.
+   Vanilla port of a radial orbital timeline, in the Nexus AI gold theme.
    Progressive enhancement: if this runs, it replaces the static fallback chips. */
 (function () {
   var root = document.getElementById("orbit");
@@ -21,7 +21,7 @@
   // Clear fallback, build stage
   root.innerHTML = "";
   var ring = el("div", "orbit-ring"); ring.setAttribute("aria-hidden", "true");
-  var core = el("div", "orbit-core"); core.setAttribute("aria-hidden", "true"); core.innerHTML = "<span>JN</span>";
+  var core = el("div", "orbit-core"); core.setAttribute("aria-hidden", "true"); core.innerHTML = "<span>NA</span>";
   var stage = el("div", "orbit-stage");
   var hint = el("div", "orbit-hint"); hint.textContent = "tap a node ↗";
   root.appendChild(ring); root.appendChild(core); root.appendChild(stage); root.appendChild(hint);

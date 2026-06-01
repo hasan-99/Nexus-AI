@@ -1,4 +1,4 @@
-/* Jahouse Nexus — scroll-cinema layer.
+/* Nexus AI — scroll-cinema layer.
    Four effects, all framework-free and individually guarded:
      1. Lenis momentum smooth-scroll (if the CDN lib loaded)
      2. a top scroll-progress bar
@@ -51,16 +51,25 @@
   targets.forEach(function (el) {
     if (el.dataset.rwDone) return;
     el.dataset.rwDone = "1";
-    var words = el.textContent.trim().split(/\s+/);
-    el.textContent = "";
     var spans = [];
-    words.forEach(function (w, i) {
-      var s = document.createElement("span");
-      s.className = "rw";
-      s.textContent = w;
-      el.appendChild(s);
-      if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
-      spans.push(s);
+    // walk child nodes so inline elements (e.g. the animated cycle span)
+    // survive intact — only text gets split into per-word reveal spans.
+    var kids = Array.prototype.slice.call(el.childNodes);
+    el.textContent = "";
+    kids.forEach(function (node) {
+      if (node.nodeType === 3) {
+        node.textContent.split(/(\s+)/).forEach(function (w) {
+          if (w === "") return;
+          if (/^\s+$/.test(w)) { el.appendChild(document.createTextNode(w)); return; }
+          var s = document.createElement("span");
+          s.className = "rw";
+          s.textContent = w;
+          el.appendChild(s);
+          spans.push(s);
+        });
+      } else {
+        el.appendChild(node); // keep animated/inline children as-is
+      }
     });
     revealEls.push({ el: el, spans: spans });
     if (reduce) spans.forEach(function (s) { s.classList.add("on"); });
@@ -143,12 +152,18 @@
       cy = H * 0.52;
     }
 
-    var ang = 0, tilt = 0.42, raf = null;
+    var ang = 0, tilt = 0.42, raf = null, zoom = 1;
     var proj = new Array(N);
     function draw() {
       ctx.clearRect(0, 0, W, H);
       var P = pal();
       ang += 0.0016;
+      // scroll-zoom: globe scales up + drifts as you scroll into the page
+      var sc = window.scrollY || document.documentElement.scrollTop || 0;
+      var heroProg = Math.max(0, Math.min(1, sc / (H || 1)));
+      zoom += (1 + heroProg * 0.7 - zoom) * 0.12; // eased follow
+      var Rz = R * zoom;
+      var cyz = cy - heroProg * H * 0.10;
       var sa = Math.sin(ang), ca = Math.cos(ang);
       var st = Math.sin(tilt), ctt = Math.cos(tilt);
       // rotate + project
@@ -159,7 +174,7 @@
         var yy = p.y * ctt - z * st;
         var zz = p.y * st + z * ctt;
         var depth = (zz + 1) / 2; // 0 back .. 1 front
-        proj[i] = { sx: cx + x * R, sy: cy + yy * R, d: depth };
+        proj[i] = { sx: cx + x * Rz, sy: cyz + yy * Rz, d: depth };
       }
       // links
       for (var l = 0; l < links.length; l++) {

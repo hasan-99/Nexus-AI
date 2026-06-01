@@ -1,4 +1,4 @@
-# DESIGN — Jahouse Nexus Services Website
+# DESIGN — Nexus AI Services Website
 
 > Visual contract for `portfolio3`. Every Qualia agent reads this before frontend work.
 
@@ -16,7 +16,7 @@ Differentiation:      A Cyprus digital studio presenting services as numbered sp
 
 ## 2. Color (OKLCH-first)
 
-The palette is gold on warm near-black. Teal was carried over from an earlier sci-fi direction and was dropped because it read as Qualia Solutions' signature colour — the studio Hasan works at — which would undermine Jahouse Nexus as an independent brand. Gold is the only accent.
+The palette is gold on warm near-black. Teal was carried over from an earlier sci-fi direction and was dropped because it read as Qualia Solutions' signature colour — the studio Hasan works at — which would undermine Nexus AI as an independent brand. Gold is the only accent.
 
 ```css
 :root {
@@ -80,7 +80,7 @@ Font loading: Google Fonts CDN, weights 400/600/700 for Manrope; 400 (single wei
 
 ## 5. Signature Elements
 
-These are the five distinguishing visual moments of the Jahouse Nexus site. Do not remove or genericise them.
+These are the five distinguishing visual moments of the Nexus AI site. Do not remove or genericise them.
 
 ### Status Ticker
 A full-width marquee bar beneath the nav: monospaced gold text cycling through studio facts / service capabilities. Separators are `·`. Implemented in `script/site.js`.
