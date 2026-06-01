@@ -1,6 +1,18 @@
+# QA / dev screenshots (not part of the site)
+qa-*.jpeg
+qa-*.png
+ref-*.jpeg
+ref-*.png
 .playwright-mcp/
-.local-server.log
-.local-server.err.log
+
+# temp / planning scratch
+.planning/.compaction-snapshot.md
+_ab.css
 *.tmp
+
+# OS
+.DS_Store
 Thumbs.db
 
+# local dev server logs
+.local-server*.log
