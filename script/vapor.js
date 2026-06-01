@@ -20,16 +20,17 @@
   var mouse = { x: -9999, y: -9999, active: false };
 
   function bgFill() {
+    // higher alpha clears trails faster, so a settled word reads crisp
     return root.getAttribute("data-theme") === "dark"
-      ? "rgba(35,39,50,0.22)" : "rgba(237,241,246,0.30)";
+      ? "rgba(35,39,50,0.42)" : "rgba(237,241,246,0.5)";
   }
 
   /* ---- Particle ---------------------------------------------------------- */
   function Particle() {
     this.x = 0; this.y = 0; this.vx = 0; this.vy = 0; this.ax = 0; this.ay = 0;
     this.tx = 0; this.ty = 0;
-    this.maxSpeed = Math.random() * 4 + 4;
-    this.maxForce = this.maxSpeed * 0.05;
+    this.maxSpeed = Math.random() * 5 + 7;
+    this.maxForce = this.maxSpeed * 0.09;
     this.size = 2;
     this.sc = [0,0,0]; this.tc = [0,0,0]; this.cw = 0;
     this.blend = Math.random() * 0.025 + 0.004;
@@ -38,7 +39,12 @@
   Particle.prototype.move = function (dt) {
     var dx = this.tx - this.x, dy = this.ty - this.y;
     var dist = Math.sqrt(dx * dx + dy * dy);
-    var prox = dist < 90 ? dist / 90 : 1;
+    // snap to rest when essentially on target (unless being repelled) -> crisp word
+    if (dist < 1.4 && !this.killed && !mouse.active) {
+      this.x = this.tx; this.y = this.ty; this.vx = 0; this.vy = 0; this.ax = 0; this.ay = 0;
+      return;
+    }
+    var prox = dist < 45 ? dist / 45 : 1;
     var m = dist || 1;
     var desX = dx / m * this.maxSpeed * prox, desY = dy / m * this.maxSpeed * prox;
     var sx = desX - this.vx, sy = desY - this.vy;
@@ -124,7 +130,7 @@
       if (p.killed && (p.x < -20 || p.x > W + 20 || p.y < -20 || p.y > H + 20)) particles.splice(i, 1);
     }
     frame++;
-    if (frame % 230 === 0) { wordIdx = (wordIdx + 1) % WORDS.length; nextWord(WORDS[wordIdx]); }
+    if (frame % 300 === 0) { wordIdx = (wordIdx + 1) % WORDS.length; nextWord(WORDS[wordIdx]); }
   }
 
   function staticRender() {
