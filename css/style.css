@@ -518,12 +518,15 @@ h1, h2, h3, p { margin-top: 0; }
   padding: clamp(1.4rem, 2.8vw, 2.2rem) clamp(1.3rem, 2.8vw, 2.1rem);
   display: grid; gap: clamp(0.9rem, 1.8vw, 1.3rem);
   font-size: clamp(0.84rem, 1.4vw, 1rem); line-height: 1.6;
+  background:
+    radial-gradient(68% 52% at 100% 0%, var(--accent-bg), transparent 62%),
+    repeating-linear-gradient(0deg, transparent 0 28px, oklch(0.5 0.03 255 / 0.03) 28px 29px);
 }
 .tl { margin: 0; opacity: 0; transform: translateY(5px); transition: opacity 240ms var(--ease), transform 240ms var(--ease); }
 .tl.show { opacity: 1; transform: none; }
 html:not(.js) .tl { opacity: 1; transform: none; }
-.tl.cmd { color: var(--text); }
-.tl.cmd::before { content: "$ "; color: var(--accent); font-weight: 700; }
+.tl.cmd { color: var(--accent); font-weight: 600; }
+.tl.cmd::before { content: "$ "; color: oklch(0.66 0.17 150); font-weight: 800; }
 .tl.ok { color: var(--text); }
 .ok-mark { color: oklch(0.66 0.16 150); font-weight: 700; }
 .ok-i { color: var(--accent); font-weight: 700; margin-right: 0.3rem; }
