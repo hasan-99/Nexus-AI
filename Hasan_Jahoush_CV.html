@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hasan Jahoush | Software & AI Engineer</title>
+<style>
+  :root {
+    --navy: #1f3b5c;
+    --navy-soft: #2c5a86;
+    --accent: #2b7cc4;
+    --ink: #2a2f36;
+    --muted: #5b6470;
+    --line: #d9dee5;
+    --pill-bg: #eef2f7;
+    --pill-ink: #34506e;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 13.2px;
+    line-height: 1.5;
+    background: #f4f6f9;
+  }
+  .page {
+    max-width: 820px;
+    margin: 24px auto;
+    background: #fff;
+    padding: 44px 52px 52px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  }
+
+  /* Header */
+  header { text-align: center; }
+  .avatar {
+    width: 118px; height: 118px; border-radius: 50%;
+    object-fit: cover; object-position: center 50%; margin: 0 auto 14px;
+    display: block; background: #1c1f24;
+    border: 3px solid #e7ebf0;
+  }
+  h1 {
+    font-size: 30px; letter-spacing: 2px; margin: 4px 0 6px;
+    color: var(--navy); font-weight: 800;
+  }
+  .contact { color: var(--muted); font-size: 12.4px; }
+  .links { margin: 5px 0 4px; }
+  .links a { color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 6px; }
+  .role-line { font-weight: 700; color: var(--ink); margin-top: 4px; font-size: 13.5px; }
+  .rule { border: none; border-top: 2.5px solid var(--navy); margin: 16px 0 6px; }
+
+  .summary { color: #353b43; margin: 10px 2px 4px; text-align: justify; }
+
+  /* Sections */
+  section { margin-top: 20px; }
+  h2 {
+    font-size: 14px; letter-spacing: .6px; color: var(--navy);
+    text-transform: uppercase; font-weight: 800;
+    border-left: 4px solid var(--navy); padding-left: 9px;
+    margin: 0 0 11px;
+  }
+
+  .job { margin-bottom: 15px; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .job-org { color: var(--accent); font-weight: 800; font-size: 13.6px; }
+  .job-date { color: var(--navy-soft); font-weight: 700; font-size: 12.4px; white-space: nowrap; }
+  .job-title { font-style: italic; font-weight: 700; color: #3a4049; margin: 1px 0 6px; font-size: 12.8px; }
+  ul { margin: 4px 0 0; padding-left: 18px; }
+  li { margin-bottom: 4px; }
+  li b, .summary b { color: #1e2329; }
+
+  /* Skills */
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 34px; }
+  .skill-block { margin-bottom: 8px; }
+  .skill-label { font-weight: 800; color: var(--ink); font-size: 12.6px; margin-bottom: 5px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; }
+  .pill {
+    background: var(--pill-bg); color: var(--pill-ink);
+    border-radius: 4px; padding: 3px 8px; font-size: 11.4px; font-weight: 600;
+  }
+  .pill.hot { background: #e4f0fa; color: #1d5d92; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .edu-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .edu-org { color: var(--accent); font-weight: 800; font-size: 13.2px; }
+  .edu-date { color: var(--navy-soft); font-weight: 700; font-size: 12.2px; }
+  .edu-deg { font-style: italic; font-weight: 700; color: #3a4049; font-size: 12.6px; }
+  .lang span { font-weight: 700; }
+
+  @media print {
+    body { background: #fff; font-size: 12.4px; }
+    .page { margin: 0; box-shadow: none; max-width: none; padding: 24px 30px; }
+    section { break-inside: avoid; }
+    .job { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <!-- Swap src for your real headshot file, or leave as initials block -->
+    <img class="avatar" src="headshot.jpg" alt="Hasan Jahoush"
+         onerror="this.style.display='none'" />
+    <h1>HASAN JAHOUSH</h1>
+    <div class="contact">Nicosia, Cyprus &nbsp;|&nbsp; +357 99260049 &nbsp;|&nbsp; hasan.cy99@gmail.com</div>
+    <div class="links">
+      <a href="#">Portfolio</a> · <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
+    </div>
+    <div class="role-line">Software Engineer · AI &amp; Systems Architecture</div>
+    <hr class="rule" />
+  </header>
+
+  <p class="summary">
+    Software Engineer with a strong foundation in <b>C#/.NET and microservices</b> and hands-on experience
+    bringing <b>AI into real products</b>. I design RAG pipelines, automate workflows with LLMs, and connect
+    AI to live data and tools inside working applications. I care about clean architecture and
+    secure-by-default systems, and I'm comfortable owning a feature from design through deployment in
+    fast-moving, security-critical environments.
+  </p>
+
+  <section>
+    <h2>Professional Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-org">Odyssey Cybersecurity</span>
+        <span class="job-date">Aug 2024 - Present</span>
+      </div>
+      <div class="job-title">Software &amp; AI Engineer</div>
+      <ul>
+        <li>Integrate <b>complex, large-scale systems in C#/.NET</b>, connecting internal platforms, services,
+            and external data sources into reliable end-to-end workflows.</li>
+        <li><b>Automate operations with AI</b>, building LLM-powered pipelines that classify, enrich, and route
+            data that previously required manual analyst work.</li>
+        <li>Engineer <b>big-data pipelines</b> that turn high-volume raw threat intelligence into structured,
+            queryable datasets for analysis and reporting.</li>
+        <li>Build secure backend services with a focus on system hardening, secret isolation, and secure coding
+            in security-critical environments.</li>
+        <li>Collaborate with security analysts to translate threat-detection logic into deployed, monitored
+            software features.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-org">TechLink</span>
+        <span class="job-date">Oct 2022 - Aug 2024</span>
+      </div>
+      <div class="job-title">Software Engineer</div>
+      <ul>
+        <li>Delivered enterprise software in <b>C#, .NET, and microservices</b>, owning services from design
+            through deployment.</li>
+        <li>Built responsive frontends in <b>Angular and React.js (TypeScript)</b> for internal business users.</li>
+        <li>Engineered <b>event-driven architecture with RabbitMQ</b>, scaling background processing under peak
+            load without dropped messages.</li>
+        <li>Optimized SQL queries and relational schemas, reducing key query latency and improving overall
+            system reliability.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>AI Engineering</h2>
+    <ul>
+      <li>Build <b>AI agents and LLM applications</b>: autonomous, tool-using systems that retrieve data, take
+          actions, and plug directly into real backends.</li>
+      <li>Design <b>RAG pipelines</b> (chunking, embeddings, retrieval) that ground model output in trusted data
+          and sharply reduce hallucination.</li>
+      <li>Orchestrate <b>multi-agent workflows</b> where parallel agents research, verify, and synthesize, using
+          prompt engineering and caching for major cost and latency gains.</li>
+      <li>Ship <b>conversational voice AI</b> with Retell AI, ElevenLabs, and Telnyx (real-time speech +
+          telephony).</li>
+      <li>Integrate any model through <b>OpenRouter</b> for task-optimal routing, and connect agents to live tools,
+          data, and browsers via the Model Context Protocol (MCP).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-label">AI &amp; LLM</div>
+        <div class="pills">
+          <span class="pill hot">AI Agents</span><span class="pill hot">LLM Apps</span>
+          <span class="pill hot">RAG</span><span class="pill hot">Claude API</span>
+          <span class="pill">OpenRouter</span><span class="pill">Prompt Engineering</span>
+          <span class="pill">Multi-Agent</span><span class="pill">Embeddings</span>
+          <span class="pill">MCP</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-label">Voice &amp; Multimodal AI</div>
+        <div class="pills">
+          <span class="pill">Retell AI</span><span class="pill">ElevenLabs</span>
+          <span class="pill">Telnyx</span><span class="pill">NotebookLM</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-label">Backend</div>
+        <div class="pills">
+          <span class="pill">C# / .NET</span><span class="pill">RESTful APIs</span>
+          <span class="pill">Microservices</span><span class="pill">RabbitMQ</span>
+          <span class="pill">Node.js</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-label">Frontend</div>
+        <div class="pills">
+          <span class="pill">React / Next.js</span><span class="pill">Angular</span>
+          <span class="pill">TypeScript</span><span class="pill">Tailwind</span>
+          <span class="pill">Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-label">Data &amp; Infra</div>
+        <div class="pills">
+          <span class="pill">SQL Server</span><span class="pill">Supabase / Postgres</span>
+          <span class="pill">Impala</span><span class="pill">Vercel</span>
+          <span class="pill">Railway</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-label">Tools &amp; Practices</div>
+        <div class="pills">
+          <span class="pill">Docker</span><span class="pill">Git / CI-CD</span>
+          <span class="pill">JIRA</span><span class="pill">Secure Coding</span>
+          <span class="pill">RLS / Auth</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education &amp; Certifications</h2>
+    <div class="two-col">
+      <div>
+        <div class="edu-head">
+          <span class="edu-org">University of the People</span>
+          <span class="edu-date">2018 - 2023</span>
+        </div>
+        <div class="edu-deg">B.Sc. Computer Science</div>
+      </div>
+      <div>
+        <div class="skill-label" style="margin-bottom:4px;">Certifications</div>
+        <ul style="margin-top:2px;">
+          <li>AI Engineering &amp; Data Preparation for LLMs</li>
+          <li>Google IT Support Professional Certificate</li>
+          <li>Cybersecurity Fundamentals &amp; Ethical Computing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <div class="lang">
+      <span>Arabic</span>: Native &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span>English</span>: Proficient &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span>Greek</span>: Conversational
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

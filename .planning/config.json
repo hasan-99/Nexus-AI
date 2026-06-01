@@ -1,0 +1,11 @@
+{
+  "mode": "interactive",
+  "depth": "standard",
+  "template_type": "website",
+  "workflow": {
+    "research": true,
+    "plan_check": true,
+    "verifier": true
+  }
+}
+
