@@ -1621,7 +1621,7 @@ html.lenis, html.lenis body { height: auto; }
   margin: 2.5rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0;
 }
 .pipe-step {
@@ -1853,3 +1853,30 @@ html.js .svc-card.js-reveal.revealed { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html.js .svc-card.js-reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ---------- Lightning hero (demo page) ---------- */
+.lightning-hero {
+  position: relative;
+  margin: 0 0 1rem;
+  padding: clamp(1.5rem, 4vw, 2.6rem) var(--pad-x) clamp(1.2rem, 3vw, 2rem);
+  background: radial-gradient(120% 120% at 50% 0%, #0e1830, #070b16 80%);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+#lightning {
+  position: relative;
+  width: 100%;
+  height: clamp(170px, 26vw, 280px);
+  cursor: crosshair;
+}
+#lightning canvas { display: block; width: 100%; height: 100%; border-radius: 12px; }
+.lightning-sub {
+  position: relative; z-index: 1;
+  max-width: 60ch; margin: 0.4rem auto 0; text-align: center;
+  color: oklch(0.82 0.03 250); font-size: 1rem;
+}
+.lightning-hint { color: oklch(0.74 0.14 233); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em; }
+
+/* Tighten the gap below the project-flow pipeline */
+.flow-section { padding-bottom: clamp(1.8rem, 3.5vw, 3rem); }
+.flow-section + .section { padding-top: clamp(2rem, 4vw, 3.2rem); }

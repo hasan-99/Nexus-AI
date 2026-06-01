@@ -39,12 +39,12 @@
     </nav>
 
     <main id="main">
-      <div class="page-hero">
-        <p class="eyebrow">Free demo</p>
+      <section class="lightning-hero" aria-label="Request a free demo">
+        <div id="lightning" data-text="REQUEST A DEMO" aria-hidden="true"><canvas></canvas></div>
+        <h1 class="visually-hidden">Request a free demo</h1>
         <p class="console-readout" data-service-slot hidden>SELECTED SERVICE: <span data-service-name></span></p>
-        <h1>See it work before you pay <span class="hl">a cent.</span></h1>
-        <p>Tell me what you want to see, a landing page, an AI agent that answers leads, an automation that saves you hours, and I'll build a short demo using your real case. Free, and no obligation to continue.</p>
-      </div>
+        <p class="lightning-sub">Tell me what to see, a page, an AI agent, or an automation, and I'll build a short demo from your real case. Free, no obligation. <span class="lightning-hint">(tap the storm)</span></p>
+      </section>
 
       <section class="section" aria-labelledby="demo-h">
         <div class="wrap">
@@ -154,5 +154,6 @@
     <script src="script/site.js" defer></script>
     <script src="script/fx.js" defer></script>
     <script src="script/bg.js" defer></script>
+    <script src="script/lightning.js" defer></script>
   </body>
 </html>
