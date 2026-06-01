@@ -1965,7 +1965,7 @@ html.js .svc-card.js-reveal.revealed { opacity: 1; transform: none; }
   background: #0a0d14;
   box-shadow: 0 30px 70px oklch(0.4 0.1 260 / 0.4), inset 0 0 0 1px oklch(1 0 0 / 0.06);
 }
-.ab-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; }
+.ab-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 46%; }
 .ab-ring {
   position: absolute; inset: -2%; border-radius: 50%;
   border: 2px dashed var(--accent); opacity: 0.55;
@@ -2029,12 +2029,52 @@ html.js .svc-card.js-reveal.revealed { opacity: 1; transform: none; }
 .ab-social a:hover { transform: translateY(-3px); border-color: var(--accent); color: var(--accent); }
 
 .ab-stats {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-  background: var(--line); border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  padding: clamp(1.4rem, 3vw, 2.2rem) var(--pad-x);
+  border-bottom: 1px solid var(--line);
+  perspective: 1000px;
 }
-.ab-stat { background: var(--bg); padding: clamp(1.4rem, 3vw, 2.2rem) var(--pad-x); display: grid; gap: 0.3rem; }
-.ab-stat .n { font-family: var(--display); font-size: clamp(1.6rem, 3.5vw, 2.6rem); line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
-.ab-stat .l { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.ab-stat {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: grid; gap: 0.3rem; align-content: center;
+  min-height: 116px;
+  padding: clamp(1.1rem, 2.2vw, 1.5rem) clamp(1.2rem, 2.3vw, 1.6rem);
+  border-radius: 16px; color: #fff;
+  background: linear-gradient(140deg, oklch(0.72 0.16 225), oklch(0.64 0.16 250));
+  box-shadow: 0 20px 44px oklch(0.5 0.14 255 / 0.32);
+  transform-style: preserve-3d; will-change: transform;
+  transition: transform 200ms var(--ease), box-shadow 320ms var(--ease);
+}
+.ab-stat:nth-child(1) { background: linear-gradient(140deg, oklch(0.76 0.15 215), oklch(0.66 0.16 245)); }
+.ab-stat:nth-child(2) { background: linear-gradient(140deg, oklch(0.78 0.14 198), oklch(0.66 0.16 232)); }
+.ab-stat:nth-child(3) { background: linear-gradient(140deg, oklch(0.66 0.17 258), oklch(0.6 0.18 284)); }
+.ab-stat:nth-child(4) { background: linear-gradient(140deg, oklch(0.66 0.18 292), oklch(0.6 0.18 315)); }
+/* holographic glare follows the cursor (set via JS --gx/--gy) */
+.ab-glare {
+  position: absolute; inset: -1px; z-index: 3; pointer-events: none; opacity: 0;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), oklch(1 0 0 / 0.55), transparent 42%);
+  mix-blend-mode: overlay; transition: opacity 240ms var(--ease);
+}
+/* drifting glow blob */
+.ab-stat::before {
+  content: ""; position: absolute; z-index: 0; width: 80%; height: 80%; top: -28%; right: -18%;
+  background: radial-gradient(circle, oklch(1 0 0 / 0.4), transparent 70%);
+  filter: blur(20px); animation: ab-stat-float 7s ease-in-out infinite; transform: translateZ(10px);
+}
+.ab-stat:nth-child(even)::before { animation-delay: 1.6s; }
+@keyframes ab-stat-float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-12%, 16%); } }
+.ab-stat-bg {
+  position: absolute; right: -0.18em; bottom: -0.3em; z-index: 1;
+  font-size: clamp(3.6rem, 7.5vw, 5.6rem); color: #fff; opacity: 0.16;
+  transform: translateZ(24px);
+}
+.ab-stat .n {
+  position: relative; z-index: 2; transform: translateZ(48px);
+  font-family: var(--display), "Archivo Black Fallback"; font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1; letter-spacing: -0.03em;
+  color: #fff; text-shadow: 0 8px 26px oklch(0.3 0.1 260 / 0.5);
+}
+.ab-stat .l { position: relative; z-index: 2; transform: translateZ(30px); font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(0.98 0.02 250 / 0.9); }
+@media (prefers-reduced-motion: reduce) { .ab-stat { transform: none !important; } .ab-stat::before { animation: none; } .ab-glare { display: none; } }
 
 .ab-block { padding-block: clamp(2.4rem, 5vw, 4rem); }
 

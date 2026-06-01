@@ -41,6 +41,50 @@
     });
   }
 
+  // Holographic 3D tilt + cursor glare for [data-tilt] cards
+  var tilts = document.querySelectorAll("[data-tilt]");
+  if (tilts.length && !reduce && window.matchMedia("(pointer: fine)").matches) {
+    tilts.forEach(function (card) {
+      var glare = card.querySelector(".ab-glare");
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        var rx = (0.5 - py) * 12, ry = (px - 0.5) * 14;
+        card.style.transform = "rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg) translateY(-5px)";
+        card.style.setProperty("--gx", (px * 100).toFixed(1) + "%");
+        card.style.setProperty("--gy", (py * 100).toFixed(1) + "%");
+        if (glare) glare.style.opacity = "1";
+      });
+      card.addEventListener("pointerleave", function () {
+        card.style.transform = "";
+        if (glare) glare.style.opacity = "0";
+      });
+    });
+  }
+
+  // Count-up for [data-count] numbers when they scroll into view
+  var counters = document.querySelectorAll("[data-count]");
+  if (counters.length) {
+    if (reduce || !("IntersectionObserver" in window)) {
+      counters.forEach(function (el) { el.textContent = el.getAttribute("data-count") + (el.getAttribute("data-suffix") || ""); });
+    } else {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target, target = parseInt(el.getAttribute("data-count"), 10) || 0;
+          var suf = el.getAttribute("data-suffix") || "", c = 0, stepN = Math.max(1, Math.round(target / 22));
+          (function tick() {
+            c += stepN; if (c >= target) c = target;
+            el.textContent = c + suf;
+            if (c < target) setTimeout(tick, 45);
+          })();
+          cio.unobserve(el);
+        });
+      }, { threshold: 0.6 });
+      counters.forEach(function (el) { cio.observe(el); });
+    }
+  }
+
   // Seed a plausible "manual steps removed" value so the ticker feels live
   var steps = document.querySelectorAll("[data-steps]");
   if (steps.length) {
