@@ -25,6 +25,9 @@
     document.addEventListener("click", function (e) {
       var a = e.target.closest && e.target.closest('a[href^="#"]');
       if (!a) return;
+      // Links that drive CSS :target views (blog reader) must keep native
+      // hash navigation — intercepting them would block the article opening.
+      if (a.hasAttribute("data-native") || a.classList.contains("blog-card") || a.classList.contains("blog-back")) return;
       var id = a.getAttribute("href");
       if (id.length < 2) return;
       var el = document.querySelector(id);
