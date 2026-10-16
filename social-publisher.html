@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Information about Hasan Social Publisher, a private local tool for preparing and publishing LinkedIn content.">
+  <title>Hasan Social Publisher | Nexus AI</title>
+  <style>
+    :root{color-scheme:dark;--bg:#101211;--panel:#191d1b;--text:#f3f1e9;--muted:#b2b7b2;--line:#343a35;--accent:#d6b36a;--link:#f0cc7e}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0,#283027 0,transparent 50%),var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(900px,calc(100% - 36px));margin:auto}.top{padding:26px 0;border-bottom:1px solid var(--line)}.top a,.links a{color:var(--link)}.brand{font-weight:750;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}.hero{padding:clamp(48px,9vw,100px) 0 42px}.eyebrow{color:var(--accent);font:600 .78rem/1.4 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase}h1{max-width:760px;margin:.8rem 0;font-size:clamp(2.4rem,7vw,5rem);line-height:1.03;letter-spacing:-.055em}h2{margin:0 0 12px;font-size:1.2rem}.lede{max-width:700px;color:var(--muted);font-size:1.18rem}.card{margin:20px 0;padding:24px;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--panel) 88%,transparent)}.card p:last-child{margin-bottom:0}.links{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:28px}.links a{font-weight:650}.note{color:var(--muted)}footer{margin-top:64px;padding:24px 0 38px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}footer a{color:var(--link)}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap"><a class="brand" href="index.html">Nexus AI · Cyprus</a></div></header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">A private local tool · Nicosia, Cyprus</div>
+      <h1>Hasan Social Publisher</h1>
+      <p class="lede">A personal content studio that helps Hasan Jahoush prepare LinkedIn posts and schedule them to his own profile. It runs on his Windows computer and is not offered as a public service or to other users.</p>
+    </section>
+    <section class="card">
+      <h2>What it does</h2>
+      <p>The tool stores profile settings, post drafts, locally rendered post images, schedules, and publishing history in a local SQLite database and files. A local n8n workflow calls the dashboard on the same computer to generate and publish scheduled content.</p>
+      <p>When enabled, it can publish text and image posts to Hasan’s personal LinkedIn profile without a per-post approval step. Its image posts use branded graphics rendered locally from the post text and visual brief.</p>
+    </section>
+    <section class="card">
+      <h2>Connected services and data</h2>
+      <p>ChatGPT plan usage may send the configured profile, topic, recent post excerpts, and selected public-source excerpts to OpenAI to generate post copy. This uses the separately authorized ChatGPT plan allowance, not an OpenAI API key or paid API fallback. See the <a href="social-publisher-privacy.html">privacy notice</a>.</p>
+      <p>Google OAuth requests the Gmail send permission only. The tool uses it to send publishing and failure notifications to Hasan’s configured address; it does not read the Gmail inbox. LinkedIn OAuth is used to identify Hasan’s profile and publish the content he has configured.</p>
+    </section>
+    <section class="card">
+      <h2>Operator and support</h2>
+      <p>Maintained by Hasan Jahoush, Nexus AI, Nicosia, Cyprus. For questions about this local tool or its data, contact <a href="mailto:hasan.cy99@gmail.com">hasan.cy99@gmail.com</a>.</p>
+      <p class="note">This page describes the private local publishing tool only. It is not a service signup page.</p>
+    </section>
+    <nav class="links" aria-label="Legal information"><a href="social-publisher-privacy.html">Privacy notice</a><a href="social-publisher-terms.html">Terms of use</a><a href="index.html">Nexus AI home</a></nav>
+  </main>
+  <footer><div class="wrap">© 2026 Hasan Jahoush · Nexus AI · Nicosia, Cyprus</div></footer>
+</body>
+</html>
